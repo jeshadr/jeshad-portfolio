@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
 import Box from "./Box";
+import Library from "./Library";
 import SidebarItem from "./SidebarItem";
 
 interface SidebarProps {
@@ -62,9 +63,12 @@ const routes = useMemo(() => [
                     </div>
                 </Box>
                 <Box className="overflow-y-auto h-full">
-                    Song Library
+                    <Library />
                 </Box>
             </div>
+            <main className="h-full flex-1 overflow-y-auto py-2">
+                {children}
+            </main>
         </div>
     );
 }

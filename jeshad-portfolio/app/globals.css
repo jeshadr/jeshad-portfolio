@@ -1,7 +1,10 @@
 @import "tailwindcss";
+
+/*
 @tailwind components;
 @tailwind base;
 @tailwind utilities;
+*/
 
 html,
 body,
