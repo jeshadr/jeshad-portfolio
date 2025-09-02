@@ -8,7 +8,7 @@ export default function Home() {
       {/* Header should only wrap this intro */}
       <Header>
         <div className="mb-2">
-          <h1 className="text-white text-4xl font-semibold">Welcome! I'm Jeshad</h1>
+          <h1 className="text-white text-4xl font-semibold">Welcome! I&apos;m Jeshad</h1>
           <div
             className="
               grid
