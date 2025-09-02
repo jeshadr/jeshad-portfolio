@@ -21,7 +21,7 @@ export default function ArtistBar() {
       {/* Single scroll region that holds ALL cards */}
       <div className="flex-1 overflow-y-auto flex flex-col gap-y-2">
         {/* About card */}
-        <Box>
+        <Box className="h-full">
           <div className="p-4">
             <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-neutral-900">
               <Image
@@ -63,7 +63,7 @@ export default function ArtistBar() {
         </Box>
 
         {/* Highlights */}
-        <Box>
+        <Box className="h-full">
           <div className="p-4">
             <h3 className="text-white font-semibold">Highlights</h3>
             <ul className="mt-3 space-y-2 text-sm text-neutral-300">
@@ -75,20 +75,20 @@ export default function ArtistBar() {
         </Box>
 
         {/* Fun Facts */}
-        <Box>
+        <Box className="h-full">
           <div className="p-4">
             <h3 className="text-white font-semibold">Fun Facts</h3>
             <div className="mt-3 text-sm text-neutral-300">
-              • Love going on hikes <br />
-              • Big fan of TV shows — currently watching season 2 of &apos;Wednesday&apos; <br />
-              • Love to eat out <br />
+              • Love going on hikes<br />
+              • Big fan of shows — currently watching &apos;Wednesday&apos;<br />
+              • Love to eat out<br />
               • Enjoy going to the gym
             </div>
           </div>
         </Box>
 
         {/* Currently Building */}
-        <Box className="overflow-y-auto h-full">
+        <Box className="h-full">
           <div className="p-4">
             <h3 className="text-white font-semibold">Currently Building</h3>
             <div className="mt-2 text-sm text-neutral-300">
