@@ -7,7 +7,6 @@ const STORAGE_KEY = "sortHintDismissed";
 export default function SortHint() {
   const [open, setOpen] = useState(false);
 
-  // Show immediately on mount if not dismissed
   useEffect(() => {
     const dismissed = localStorage.getItem(STORAGE_KEY) === "1";
     if (!dismissed) setOpen(true);
@@ -23,7 +22,7 @@ export default function SortHint() {
   return (
     <div
       className="
-        fixed right-4 md:right-6 bottom-6 z-50
+        fixed top-4 left-4 md:top-6 md:left-6 z-50
         animate-fadeIn
       "
     >
@@ -46,7 +45,9 @@ export default function SortHint() {
             Click Category, Since, or Proficiency to sort.
             Click again to flip the order, third time to reset.
           </p>
-          <p className="text-xs text-green-400 mt-2">Click anywhere on this tip to dismiss</p>
+          <p className="text-xs text-green-400 mt-2">
+            Click anywhere on this tip to dismiss
+          </p>
         </div>
       </button>
     </div>

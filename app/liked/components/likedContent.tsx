@@ -16,7 +16,6 @@ type Row = {
 type SortKey = "category" | "since" | "proficiency" | null;
 type SortDir = "asc" | "desc";
 
-/** Sort hint that shows on every mount, hides on click */
 function SortHint() {
   const [open, setOpen] = useState(false);
 
@@ -27,14 +26,14 @@ function SortHint() {
   if (!open) return null;
 
   return (
-    <div className="fixed right-4 md:right-6 bottom-6 z-50 animate-fadeIn">
+    <div className="fixed top-4 left-4 md:top-6 md:left-6 z-50 animate-fadeIn">
       <button
         onClick={() => setOpen(false)}
         className="
-          w-96 text-left             /* wider: 24rem instead of 18rem */
+          w-96 text-left
           rounded-xl border border-white/10
           bg-neutral-900/95 shadow-xl backdrop-blur
-          p-5 flex items-start gap-4 /* more padding and gap */
+          p-5 flex items-start gap-4
           hover:bg-neutral-800 transition
         "
       >

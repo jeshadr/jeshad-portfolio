@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 import Image from "next/image";
-import LikedContent from "./components/likedContent";
+import ProjectContent from "./components/ProjectContent";
 const Liked = () => {
     return (
         <div
-        className="
+            className="
         bg-neutral-900
         rounded-lg
         h-full
@@ -28,10 +28,10 @@ const Liked = () => {
                         lg:w-44
                         ">
                             <Image
-                            fill
-                            alt="Playlist"
-                            className="object-cover"
-                            src="/images/liked.png"/>
+                                fill
+                                alt="Playlist"
+                                className="object-cover"
+                                src="/images/liked.png" />
                         </div>
                         <div className="
                         flex
@@ -39,20 +39,21 @@ const Liked = () => {
                         gap-y-2
                         mt-4
                         md:mt-0">
-                            <p className="hidden mx-1 md:block font-semibold text-sm">
-                                Playlist
-                            </p>
                             <h1 className="
                             text-white
                             text-4xl
                             sm:text-5xl
                             lg:text-7xl
-                            font-bold">Liked Songs</h1>
+                            font-bold">My Projects</h1>
+                            <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
+                                A few things I&apos;ve built across full stack, app development, MLL model, and games.
+                            </p>
+                            
                         </div>
                     </div>
                 </div>
             </Header>
-            <LikedContent />
+            <ProjectContent />
         </div>
     )
 }
