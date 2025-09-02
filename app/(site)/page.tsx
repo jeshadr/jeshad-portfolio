@@ -8,7 +8,7 @@ export default function Home() {
       {/* Header should only wrap this intro */}
       <Header>
         <div className="mb-2">
-          <h1 className="text-white text-4xl font-semibold">Welcome! I&apos;m Jeshad</h1>
+          <h1 className="text-white text-4xl font-semibold">Welcome to Jeshadify!</h1>
           <div
             className="
               grid
@@ -21,14 +21,14 @@ export default function Home() {
             "
           >
             <ListItem
-              image="/images/liked.png"
-              name="Liked Songs"
-              href="/liked"
+              image="/images/techstackPlaylist.png"
+              name="My Techstack"
+              href="/techstack"
             />
             <ListItem
               image="/images/liked.png"
               name="Liked Songs"
-              href="/liked"
+              href="/techstack"
             />
           </div>
         </div>

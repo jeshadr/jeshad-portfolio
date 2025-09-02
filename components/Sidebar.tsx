@@ -36,12 +36,11 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
           </div>
         </Box>
 
-        {/* one scroll area per column */}
         <Box className="flex-1 min-h-0 overflow-y-auto">
           <Library />
         </Box>
       </div>
-      <main className="h-full flex-1 overflow-y-auto py-2 min-h-0">{children}</main>
+      <main className="h-full flex-1 overflow-y-auto py-2 min-h-0 custom-scrollbar">{children}</main>
       <div>
         <ArtistBar />
       </div>
