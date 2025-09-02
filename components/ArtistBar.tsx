@@ -104,7 +104,7 @@ export default function ArtistBar() {
                     <h3 className="text-white font-semibold">Fun Facts</h3>
                     <div className="mt-3 text-sm text-neutral-300">
                         • Love going on hikes <br />
-                        • Big fan of TV shows — currently watching season 2 of 'Wednesday' <br />
+                        • Big fan of TV shows — currently watching season 2 of &apos;Wednesday&apos; <br />
                         • Love to eat out <br />
                         • Enjoy going to the gym
                     </div>
