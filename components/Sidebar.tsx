@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
-import RightBar from "./ArtistBar"; // <-- add
+import ArtistBar from "./ArtistBar";
 import Box from "./Box";
 import Library from "./Library";
 import SidebarItem from "./SidebarItem";
@@ -25,9 +25,9 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   );
 
   return (
-    <div className="flex h-full">
-      {/* Left sidebar */}
-      <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
+    <div className="flex h-dvh min-h-0 overflow-hidden">   {/* was h-full */}
+      {/* Left column */}
+      <div className="hidden md:flex flex-col gap-y-2 bg-black w-[300px] p-2 h-full min-h-0 overflow-hidden">
         <Box>
           <div className="flex flex-col gap-y-4 px-5 py-4">
             {routes.map((item) => (
@@ -35,16 +35,19 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
             ))}
           </div>
         </Box>
-        <Box className="overflow-y-auto h-full">
+
+        {/* one scroll area per column */}
+        <Box className="flex-1 min-h-0 overflow-y-auto">
           <Library />
         </Box>
       </div>
+      <main className="h-full flex-1 overflow-y-auto py-2 min-h-0">{children}</main>
+      <div className="
 
-      {/* Main content */}
-      <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
+">
+        <ArtistBar />
+      </div>
 
-      {/* Right artist-style panel */}
-      <RightBar />
     </div>
   );
 };
