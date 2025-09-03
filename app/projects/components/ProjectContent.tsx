@@ -73,6 +73,7 @@ export default function ProjectContent() {
               flex flex-col items-center gap-4 py-6 px-4
               hover:bg-white/5 transition rounded-lg
               md:grid md:grid-cols-[180px_minmax(0,1fr)_100px] md:items-center md:gap-6
+              transform scale-[0.90]
             "
           >
             {/* Project Image */}

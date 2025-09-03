@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
 import Image from "next/image";
 import ProjectContent from "./components/ProjectContent";
+
 const Liked = () => {
     return (
         <div
             className="
+            no-scrollbar
         bg-neutral-900
         rounded-lg
         h-full

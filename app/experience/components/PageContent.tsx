@@ -74,7 +74,7 @@ export default function ProjectContent() {
             className="
               flex flex-col items-center gap-4 py-6 px-4
               hover:bg-white/5 transition rounded-lg
-              md:grid md:grid-cols-[180px_minmax(0,1fr)_150px] md:items-start md:gap-6
+              md:grid md:grid-cols-[180px_minmax(0,1fr)_150px] md:items-start md:gap-6 scale-[0.90]
             "
           >
             {/* Company Logo */}

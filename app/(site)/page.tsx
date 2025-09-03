@@ -4,13 +4,14 @@ import PageContent from "./components/PageContent";
 
 export default function Home() {
   return (
-    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
+    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto no-scrollbar">
       {/* Header should only wrap this intro */}
       <Header>
         <div className="mb-2">
           <h1 className="text-white text-4xl font-semibold">Welcome to Jeshadify!</h1>
           <div
             className="
+            
               grid
               grid-cols-1
               sm:grid-cols-2

@@ -5,6 +5,7 @@ const Liked = () => {
     return (
         <div
             className="
+            no-scrollbar
         bg-neutral-900
         rounded-lg
         h-full

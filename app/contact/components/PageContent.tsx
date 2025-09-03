@@ -35,15 +35,6 @@ export default function ContactPage() {
           GitHub
         </a>
         <a
-          href="https://www.jeshadr.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 text-xs transition"
-        >
-          <FaGlobe className="h-4 w-4" />
-          Portfolio
-        </a>
-        <a
           href="https://www.instagram.com/jeshadr"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,6 +42,15 @@ export default function ContactPage() {
         >
           <FaInstagram className="h-4 w-4" />
           Instagram
+        </a>
+        <a
+          href="https://www.jeshadr.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 text-xs transition"
+        >
+          <FaGlobe className="h-4 w-4" />
+          Portfolio
         </a>
       </div>
 
@@ -107,11 +107,9 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Hidden Fields */}
           <input type="hidden" name="_subject" value="New message from jeshadr.com" />
           <input type="text" name="_gotcha" className="hidden" />
 
-          {/* Submit */}
           <button
             type="submit"
             className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white text-sm font-medium rounded-md px-4 py-2 transition"

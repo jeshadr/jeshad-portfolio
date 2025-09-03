@@ -60,8 +60,10 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           </button>
         </div>
 
+        {/* Mobile Home / Search */}
         <div className="flex md:hidden gap-x-2 items-center">
           <button
+          onClick={() => router.push("/")}
             className="
               rounded-full
               p-2
@@ -91,33 +93,22 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           </button>
         </div>
 
+        {/* Resume Download Button */}
         <div className="flex justify-between items-center gap-x-4">
-          <>
-            <div>
-              <Button
-                onClick={() => {}}
-                className="
-                  bg-transparent
-                  text-neutral-300
-                  font-medium
-                "
-              >
-                Sign up
-              </Button>
-            </div>
-            <div>
-              <Button
-                onClick={() => {}}
-                className="
-                  bg-white
-                  px-6
-                  py-2
-                "
-              >
-                Log in
-              </Button>
-            </div>
-          </>
+          <a
+            href="/resume.pdf"
+            download="Jeshad_Rahman_Resume.pdf"
+          >
+            <Button
+              className="
+                bg-white
+                px-6
+                py-2
+              "
+            >
+              Download Resume
+            </Button>
+          </a>
         </div>
       </div>
 

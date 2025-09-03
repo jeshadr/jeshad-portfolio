@@ -6,6 +6,7 @@ const Liked = () => {
     return (
         <div
             className="
+            no-scrollbar
         bg-neutral-900
         rounded-lg
         h-full
@@ -13,6 +14,7 @@ const Liked = () => {
         overflow-hidden
         overflow-y-auto"
         >
+            
             <Header>
                 <div className="mt-20">
                     <div className="
@@ -32,7 +34,7 @@ const Liked = () => {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/jeshadoutsidepic.png" />
+                                src="/images/jeshadimage.jpg" />
                         </div>
                         <div className="
                         flex
