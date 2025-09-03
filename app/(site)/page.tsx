@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import ListItem from "@/components/ListItem";
 import MobileNotice from "./components/MobileNotice";
 import PageContent from "./components/PageContent";
 
@@ -10,36 +9,15 @@ export default function Home() {
       <Header>
         <div className="mb-2">
           <h1 className="text-white text-4xl font-semibold">Welcome to Jeshadify!</h1>
-          <div
-            className="
-            
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              xl:grid-cols-3
-              2xl:grid-cols-4
-              gap-3
-              mt-4
-            "
-          >
-            <ListItem
-              image="/images/techstackPlaylist.png"
-              name="My Techstack"
-              href="/techstack"
-            />
-            <ListItem
-              image="/images/liked.png"
-              name="Liked Songs"
-              href="/techstack"
-            />
-          </div>
+          <p className="text-neutral-400 text-sm mt-1">
+            My Spotify-themed portfolio where you can explore my projects, skills, and experience!
+          </p>
         </div>
       </Header>
 
-      
       {/* PageContent section */}
       <div className="mt-5 mb-7">
-          <PageContent />
+        <PageContent />
       </div>
     </div>
   );
