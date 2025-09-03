@@ -60,8 +60,9 @@ export default function PageContent() {
             </button>
           </div>
 
-          <div className="px-4 sm:px-6 pb-5">
-            <div className="flex flex-wrap justify-start gap-4 sm:gap-6 scale-[0.97]">
+          {/* Horizontal scroll container */}
+          <div className="px-4 sm:px-6 pb-5 overflow-x-auto no-scrollbar">
+            <div className="flex flex-nowrap gap-4 sm:gap-6 scale-[0.97]">
               {PROJECT_CARDS.map((p) => (
                 <a
                   key={p.title}
@@ -74,6 +75,7 @@ export default function PageContent() {
                     aspect-square
                     ring-1 ring-white/10 hover:ring-white/20
                     transition
+                    shrink-0
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40
                   "
                   aria-label={p.title}

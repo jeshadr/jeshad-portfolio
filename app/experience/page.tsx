@@ -48,7 +48,7 @@ const Liked = () => {
                             lg:text-7xl
                             font-bold">Experience & Skills</h1>
                             <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
-                                TODO: Insert experience information here
+                                A concise snapshot of the apps, tools, and impact I&apos;ve built.
                             </p>
 
                         </div>
