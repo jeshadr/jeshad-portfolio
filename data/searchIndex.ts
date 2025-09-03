@@ -1,15 +1,14 @@
-// /data/searchIndex.ts
-import { EXPERIENCES, PROJECTS, TECHS } from "@/data/skills"; // you already have these
+import { EXPERIENCES, PROJECTS, TECHS } from "@/data/skills";
 
 export type SearchItem = {
   id: string;
   title: string;
   subtitle?: string;
-  href: string;          // where clicking should take the user
+  href: string;
   section: "Projects" | "Tech" | "Experience" | "Pages";
   keywords?: string[];
-  image?: string;        // optional thumb
-  icon?: string;         // optional icon path (for tech)
+  image?: string;
+  icon?: string;
 };
 
 // ---- Projects ----
@@ -17,9 +16,7 @@ const projectItems: SearchItem[] = PROJECTS.map((p) => ({
   id: `project-${p.name}`,
   title: p.name,
   subtitle: p.description,
-  href: "/projects",                    // keep this to send users to your Projects page
-  // If you prefer to open the project’s GitHub directly, use:
-  // href: p.link ?? "/projects",
+  href: "/projects",
   section: "Projects",
   keywords: [p.name, ...(p.tags ?? [])],
   image: p.image,
@@ -37,7 +34,7 @@ const techItems: SearchItem[] = TECHS.map((t) => ({
   icon: t.icon,
 }));
 
-// ---- Experience (optional) ----
+// ---- Experience ----
 const experienceItems: SearchItem[] = (EXPERIENCES ?? []).map((e) => ({
   id: `exp-${e.company}`,
   title: e.company,
@@ -48,7 +45,7 @@ const experienceItems: SearchItem[] = (EXPERIENCES ?? []).map((e) => ({
   image: e.image,
 }));
 
-// ---- Top-level pages you want discoverable ----
+// ---- Top-level  ----
 const pageItems: SearchItem[] = [
   { id: "page-projects",   title: "Projects",          href: "/projects",   section: "Pages", icon: "/images/myprojectsicon.png" },
   { id: "page-techstack",  title: "Techstack",         href: "/techstack",  section: "Pages", icon: "/images/techstackPlaylist.png" },
@@ -65,7 +62,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   ...pageItems,
 ];
 
-// Basic matcher (accent/case-insensitive)
+// Basic matcher
 export function matchItems(query: string): SearchItem[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];

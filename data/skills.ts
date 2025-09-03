@@ -53,7 +53,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
   {
     title: "Jeshadify",
     description: "A Spotify-inspired portfolio showcasing my work, tech stack, and resume.",
-    image: "/images/spotify.png",
+    image: "/images/jeshadify.png",
     href: "https://github.com/jeshadr/jeshad-portfolio",
   },
   {
@@ -148,7 +148,7 @@ type Project = {
 export const PROJECTS: Project[] = [
   {
     name: "Jeshadify",
-    image: "/images/spotify.png",
+    image: "/images/jeshadifyprojectlogo.png",
     description:
       "A Spotify-inspired portfolio app that centralizes my work — projects, experience, and skills — with playlist-style navigation, artist-like highlights, and a clean interactive layout.",
     created: "Sep. 2025",

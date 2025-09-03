@@ -30,7 +30,7 @@ export default function AboutContent() {
         <div className="flex gap-4 overflow-x-auto no-scrollbar">
           {[
             { title: "Minecraft", src: "/images/minecraft.png" },
-            { title: "Zelda", src: "/images/elden.png" },
+            { title: "Elden Ring", src: "/images/elden.png" },
             { title: "Counter Strike 2", src: "/images/cs2.png" },
             { title: "Roblox", src: "/images/roblox.png" },
             { title: "Terraria", src: "/images/terraria.png" },
@@ -53,11 +53,12 @@ export default function AboutContent() {
         <h2 className="text-white text-2xl font-semibold mb-4">My Gallery 🎥</h2>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
           {[
-            "/images/friends1.jpg",
+            "/images/friends5.jpg",
             "/images/friends2.jpg",
             "/images/friends3.jpg",
+            "/images/friends1.jpg",
             "/images/friends4.jpg",
-            "/images/friends5.jpg",
+            
           ].map((src, i) => (
             <div
               key={i}
