@@ -50,7 +50,7 @@ const Liked = () => {
                             <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
                                 A few things I&apos;ve built across full stack, app development, MLL model, and games.
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>

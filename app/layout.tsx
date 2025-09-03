@@ -24,9 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={font.className}>
-          <UiProvider>
-            <Sidebar>{children}</Sidebar>
-          </UiProvider>
+        <UiProvider>
+          <Sidebar>{children}</Sidebar>
+        </UiProvider>
       </body>
     </html>
   );

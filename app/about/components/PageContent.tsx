@@ -58,7 +58,7 @@ export default function AboutContent() {
             "/images/friends3.jpg",
             "/images/friends1.jpg",
             "/images/friends4.jpg",
-            
+
           ].map((src, i) => (
             <div
               key={i}

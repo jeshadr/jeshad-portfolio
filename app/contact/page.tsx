@@ -13,7 +13,7 @@ const Liked = () => {
         overflow-hidden
         overflow-y-auto"
         >
-            
+
             <Header>
                 <div className="mt-20">
                     <div className="

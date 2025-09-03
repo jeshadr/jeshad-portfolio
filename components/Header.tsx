@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           </button>
         </div>
 
-        {/* Mobile: Hamburger opens menu, Search stays the same */}
+        {/* Mobile: Hamburger opens menu */}
         <div className="flex md:hidden gap-x-2 items-center">
           <button
             onClick={() => setMenuOpen(true)}

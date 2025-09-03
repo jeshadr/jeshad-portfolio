@@ -11,14 +11,12 @@ type Props = {
   onClose: () => void;
 };
 
-const EXIT_MS = 220; // match .animate-slideOut duration
+const EXIT_MS = 220;
 
 export default function MobileNav({ open, onClose }: Props) {
-  // keep rendered while closing so we can animate out
   const [shouldRender, setShouldRender] = useState(open);
   const [isClosing, setIsClosing] = useState(false);
 
-  // mount/unmount choreography
   useEffect(() => {
     if (open) {
       setShouldRender(true);
@@ -35,7 +33,6 @@ export default function MobileNav({ open, onClose }: Props) {
     }
   }, [open, shouldRender]);
 
-  // lock scroll while the sheet is visible (including during closing)
   useEffect(() => {
     if (!shouldRender) return;
     const prev = document.body.style.overflow;
@@ -67,12 +64,23 @@ export default function MobileNav({ open, onClose }: Props) {
       >
         {/* Header row */}
         <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-3">
-            <div className="relative h-9 w-9 rounded-md overflow-hidden bg-neutral-800">
-              <Image src="/images/liked.png" alt="Logo" fill className="object-cover" />
+          <Link
+            href="/"
+            onClick={onClose}
+            className="flex items-center -ml-2"
+          >
+            <div className="relative h-20 w-20 rounded-md overflow-hidden bg-neutral-800">
+              <Image
+                src="/images/jeshadifyprojectlogo.png"
+                alt="Logo"
+                fill
+                className="object-cover"
+              />
             </div>
-            <span className="text-white font-semibold">Jeshadify</span>
-          </div>
+            <span className="text-white font-bold text-2xl tracking-tight">Jeshadify</span>
+
+          </Link>
+
           <button
             onClick={onClose}
             className="h-9 w-9 rounded-full flex items-center justify-center text-neutral-300 hover:text-white hover:bg-white/10 transition"
@@ -105,7 +113,7 @@ export default function MobileNav({ open, onClose }: Props) {
           <a
             href="/resume.pdf"
             download="Jeshad_Rahman_Resume.pdf"
-            className="block w-full text-center bg-white text-black font-medium py-2 rounded-lg hover:opacity-90 transition"
+            className="block w-full font-semibold text-center bg-white text-black py-2 rounded-full hover:opacity-90 transition"
           >
             Download Resume
           </a>

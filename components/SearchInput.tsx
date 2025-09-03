@@ -37,7 +37,6 @@ export default function SearchInput({
     debounced(value);
   }, [value, debounced]);
 
-  // Keyboard shortcuts: "/" or "Ctrl+K" to focus, "Esc" to blur
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const isSlash = e.key === "/";
@@ -106,7 +105,7 @@ export default function SearchInput({
         )}
       </div>
 
-      {/* Helper hint (optional) */}
+      {/* Helper hint */}
       <div className="mt-2 text-xs text-neutral-400">
         Press <span className="text-neutral-200">/</span> or{" "}
         <span className="text-neutral-200">Ctrl+K</span> to focus • Esc to dismiss

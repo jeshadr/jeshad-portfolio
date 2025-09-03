@@ -4,7 +4,7 @@ import LikedContent from "./components/likedContent";
 const Liked = () => {
     return (
         <div
-        className="
+            className="
         bg-neutral-900
         rounded-lg
         h-full
@@ -28,10 +28,10 @@ const Liked = () => {
                         lg:w-44
                         ">
                             <Image
-                            fill
-                            alt="Playlist"
-                            className="object-cover"
-                            src="/images/techstackPlaylist.png"/>
+                                fill
+                                alt="Playlist"
+                                className="object-cover"
+                                src="/images/techstackPlaylist.png" />
                         </div>
                         <div className="
                         flex
