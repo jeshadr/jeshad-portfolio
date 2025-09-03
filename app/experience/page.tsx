@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Image from "next/image";
-//import ProjectContent from "./components/ProjectContent";
+import PageContent from "./components/PageContent";
+
 const Liked = () => {
     return (
         <div
@@ -53,7 +54,7 @@ const Liked = () => {
                     </div>
                 </div>
             </Header>
-            {/* Import component here */}
+            <PageContent />
         </div>
     )
 }
