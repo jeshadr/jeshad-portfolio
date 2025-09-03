@@ -8,7 +8,7 @@ type Project = {
   description: string;
   created: string;
   link?: string;
-  tags: string[];   // NEW
+  tags: string[];
 };
 
 const PROJECTS: Project[] = [
@@ -70,34 +70,23 @@ export default function ProjectContent() {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              grid grid-cols-[180px_minmax(0,1fr)_100px]
-              gap-6 items-center
-              py-6
-              hover:bg-white/5 transition
-              rounded-lg px-4
+              flex flex-col items-center gap-4 py-6 px-4
+              hover:bg-white/5 transition rounded-lg
+              md:grid md:grid-cols-[180px_minmax(0,1fr)_100px] md:items-center md:gap-6
             "
           >
             {/* Project Image */}
-            <div className="relative h-40 w-40 rounded-lg overflow-hidden bg-neutral-800 shrink-0">
-              <Image
-                src={p.image}
-                alt={p.name}
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-28 w-28 md:h-40 md:w-40 rounded-lg overflow-hidden bg-neutral-800 shrink-0 flex items-center justify-center">
+              <Image src={p.image} alt={p.name} fill className="object-contain" />
             </div>
 
             {/* Middle: Title + Description + Tags */}
-            <div className="flex flex-col min-w-0">
-              <h3 className="text-white font-semibold text-lg truncate">
-                {p.name}
-              </h3>
-              <p className="text-neutral-300 text-sm mt-2 line-clamp-3">
-                {p.description}
-              </p>
+            <div className="flex flex-col min-w-0 text-center md:text-left">
+              <h3 className="text-white font-semibold text-lg">{p.name}</h3>
+              <p className="text-neutral-300 text-sm mt-2">{p.description}</p>
 
               {/* Tag bubbles */}
-              <div className="flex flex-wrap gap-2 mt-3">
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-3">
                 {p.tags.map((tag, idx) => (
                   <span
                     key={idx}
@@ -107,10 +96,15 @@ export default function ProjectContent() {
                   </span>
                 ))}
               </div>
+
+              {/* Mobile: Created Date below content */}
+              <div className="mt-3 text-neutral-400 text-sm md:hidden">
+                {p.created}
+              </div>
             </div>
 
-            {/* Right: Created Date */}
-            <div className="justify-self-end text-neutral-400 text-sm">
+            {/* Desktop: Created Date on the far right */}
+            <div className="hidden md:block justify-self-end text-neutral-400 text-sm whitespace-nowrap">
               {p.created}
             </div>
           </a>

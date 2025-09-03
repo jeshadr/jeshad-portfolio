@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Image from "next/image";
+import ContactPage from "./components/PageContent";
 //import ProjectContent from "./components/ProjectContent";
 const Liked = () => {
     return (
@@ -31,7 +32,7 @@ const Liked = () => {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/liked.png" />
+                                src="/images/jeshadoutsidepic.png" />
                         </div>
                         <div className="
                         flex
@@ -46,14 +47,14 @@ const Liked = () => {
                             lg:text-7xl
                             font-bold">Contact Me!</h1>
                             <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
-                                TODO: Insert contact information here
+                                Want to collaborate, hire me, or just say hi? I read every message. 👋
                             </p>
 
                         </div>
                     </div>
                 </div>
             </Header>
-            {/* Import component here */}
+            <ContactPage />
         </div>
     )
 }
