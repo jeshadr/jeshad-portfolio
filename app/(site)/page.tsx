@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
+import MobileNotice from "./components/MobileNotice";
 import PageContent from "./components/PageContent";
 
 export default function Home() {
   return (
     <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto no-scrollbar">
-      {/* Header should only wrap this intro */}
+      <MobileNotice />
       <Header>
         <div className="mb-2">
           <h1 className="text-white text-4xl font-semibold">Welcome to Jeshadify!</h1>
