@@ -1,6 +1,6 @@
 "use client";
 
-import { SKILL_SONGS } from "@/data/skillsPlaylist";
+import { SKILL_SONGS } from "@/data/skills";
 import { useSkillSort } from "@/hooks/useSkillSort";
 import { HiArrowDown, HiArrowUp } from "react-icons/hi";
 import Row from "./Row";
