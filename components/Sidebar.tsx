@@ -8,6 +8,7 @@ import ArtistBar from "./ArtistBar";
 import Box from "./Box";
 import Library from "./Library";
 import SidebarItem from "./SidebarItem";
+import { useUi } from "./UiProvider";
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -15,6 +16,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const pathname = usePathname();
+  const { showArtistBar } = useUi();
 
   const routes = useMemo(
     () => [
@@ -25,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   );
 
   return (
-    <div className="flex h-dvh min-h-0 overflow-hidden">   {/* was h-full */}
+    <div className="flex h-dvh min-h-0 overflow-hidden">
       {/* Left column */}
       <div className="hidden md:flex flex-col gap-y-2 bg-black w-[300px] p-2 h-full min-h-0 overflow-hidden">
         <Box>
@@ -35,16 +37,22 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
             ))}
           </div>
         </Box>
-
         <Box className="flex-1 min-h-0 overflow-y-auto">
           <Library />
         </Box>
       </div>
-      <main className="h-full flex-1 overflow-y-auto py-2 min-h-0 custom-scrollbar">{children}</main>
-      <div>
-        <ArtistBar />
-      </div>
 
+      {/* Main */}
+      <main className="h-full flex-1 overflow-y-auto py-2 min-h-0 custom-scrollbar">
+        {children}
+      </main>
+
+      {/* Right Artist bar (toggled) */}
+      {showArtistBar && (
+        <div className="hidden xl:block no-scrollbar">
+          <ArtistBar />
+        </div>
+      )}
     </div>
   );
 };

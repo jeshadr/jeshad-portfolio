@@ -15,7 +15,6 @@ export default function Home() {
         </div>
       </Header>
 
-      {/* PageContent section */}
       <div className="mt-5 mb-7">
         <PageContent />
       </div>

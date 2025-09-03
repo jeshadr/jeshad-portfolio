@@ -1,4 +1,3 @@
-// ArtistBar.tsx
 "use client";
 
 import Image from "next/image";
@@ -19,7 +18,7 @@ export default function ArtistBar() {
       "
     >
       {/* Single scroll region that holds ALL cards */}
-      <div className="flex-1 overflow-y-auto flex flex-col gap-y-2">
+      <div className="flex-1 overflow-y-auto flex flex-col gap-y-2 no-scrollbar">
         {/* About card */}
         <Box className="h-full">
           <div className="p-4">

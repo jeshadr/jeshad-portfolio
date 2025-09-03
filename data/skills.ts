@@ -1,7 +1,7 @@
 export type SkillTile = {
   name: string;
-  image: string;   // public path
-  href?: string;    // route or external link
+  image: string;
+  href?: string;
 };
 
 export const SKILL_TILES: SkillTile[] = [
@@ -35,9 +35,9 @@ export type Tech = {
 
 export const TECHS: Tech[] = [
   { name: "HTML", icon: "/images/html.svg", subtitle: "Website Development", proficiency: "Expert" },
-  { name: "React", icon: "/images/react.svg", subtitle: "Website Development", proficiency: "Expert" },
+  { name: "React", icon: "/images/react.svg", subtitle: "Website Development", proficiency: "Intermediate" },
   { name: "TypeScript", icon: "/images/typescript.svg", subtitle: "Web Development", proficiency: "Advanced" },
-  { name: "Node.js", icon: "/images/nodejs.svg", subtitle: "Backend Development", proficiency: "Advanced" },
+  { name: "Node.js", icon: "/images/nodejs.svg", subtitle: "Backend Development", proficiency: "Intermediate" },
   { name: "Python", icon: "/images/python.svg", subtitle: "Scripting & ML", proficiency: "Intermediate" },
   { name: "Tailwind", icon: "/images/tailwind.svg", subtitle: "UI Engineering", proficiency: "Advanced" },
 ];
@@ -63,7 +63,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     href: "https://github.com/jeshadr/PinchDraw",
   },
   {
-    title: "Calorie Calc",
+    title: "Daves Calorie Calc",
     description: "Fast food calorie tracker with cart flows and spice-level selection.",
     image: "/images/daves2.png",
     href: "https://github.com/jeshadr/DavesCalorieCalculator",

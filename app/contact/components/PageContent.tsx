@@ -2,7 +2,7 @@
 
 import { FaEnvelope, FaGithub, FaGlobe, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-const FORMSPREE_URL = "https://formspree.io/f/mandplqy"; // <-- replace with your Formspree endpoint
+const FORMSPREE_URL = "https://formspree.io/f/mandplqy";
 
 export default function ContactPage() {
   return (
@@ -73,7 +73,7 @@ export default function ContactPage() {
               type="text"
               required
               placeholder="Jane Doe"
-              className="w-full rounded-md bg-neutral-900 text-white placeholder:text-neutral-500 border border-white/10 focus:outline-none focus:ring-2 focus:ring-green-600 px-3 py-2"
+              className="w-full rounded-md bg-neutral-900 text-white placeholder:text-neutral-500 border border-white/10 focus:outline-none focus:ring-2 focus:ring-green-700 px-3 py-2"
             />
           </div>
 
@@ -88,7 +88,7 @@ export default function ContactPage() {
               type="email"
               required
               placeholder="jane@example.com"
-              className="w-full rounded-md bg-neutral-900 text-white placeholder:text-neutral-500 border border-white/10 focus:outline-none focus:ring-2 focus:ring-green-600 px-3 py-2"
+              className="w-full rounded-md bg-neutral-900 text-white placeholder:text-neutral-500 border border-white/10 focus:outline-none focus:ring-2 focus:ring-green-700 px-3 py-2"
             />
           </div>
 
@@ -103,7 +103,7 @@ export default function ContactPage() {
               required
               rows={6}
               placeholder="Tell me a bit about your idea or question..."
-              className="w-full rounded-md bg-neutral-900 text-white placeholder:text-neutral-500 border border-white/10 focus:outline-none focus:ring-2 focus:ring-green-600 px-3 py-2 resize-y"
+              className="w-full rounded-md bg-neutral-900 text-white placeholder:text-neutral-500 border border-white/10 focus:outline-none focus:ring-2 focus:ring-green-700 px-3 py-2 resize-y"
             />
           </div>
 
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white text-sm font-medium rounded-md px-4 py-2 transition"
+            className="inline-flex items-center justify-center bg-green-700 hover:bg-green-800 text-white text-sm font-medium rounded-md px-4 py-2 transition"
           >
             Send message
           </button>

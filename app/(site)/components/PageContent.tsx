@@ -87,7 +87,6 @@ export default function PageContent() {
                     className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     sizes="(max-width: 640px) 240px, (max-width: 768px) 260px, 280px"
                   />
-                  {/* darken + title + description on hover */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition" />
                   <div
                     className="

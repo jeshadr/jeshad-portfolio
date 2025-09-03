@@ -1,11 +1,11 @@
 import Sidebar from "@/components/Sidebar";
 
+import { UiProvider } from "@/components/UiProvider";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 
 const font = Figtree({
-  //variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
@@ -23,10 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={font.className} >
-          <Sidebar>
-          {children}
-          </Sidebar>
+        className={font.className}>
+          <UiProvider>
+            <Sidebar>{children}</Sidebar>
+          </UiProvider>
       </body>
     </html>
   );

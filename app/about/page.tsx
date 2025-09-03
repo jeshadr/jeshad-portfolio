@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Image from "next/image";
+import AboutContent from "./components/PageContent";
 //import ProjectContent from "./components/ProjectContent";
 const Liked = () => {
     return (
@@ -21,7 +22,7 @@ const Liked = () => {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/liked.png" />
+                                src="/images/allaboutme.png" />
                         </div>
                         <div className="
                         flex
@@ -36,14 +37,14 @@ const Liked = () => {
                             lg:text-7xl
                             font-bold">About me</h1>
                             <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
-                                TODO: Insert about me here
+                                Take a step into my life
                             </p>
 
                         </div>
                     </div>
                 </div>
             </Header>
-            {/* Import component here */}
+            <AboutContent />
         </div>
     )
 }
