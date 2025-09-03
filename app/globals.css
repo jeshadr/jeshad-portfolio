@@ -8,6 +8,11 @@
     scrollbar-width: none;
   }
 }
+@keyframes slideIn {
+  from { transform: translateX(-12px); opacity: 0 }
+  to   { transform: translateX(0);     opacity: 1 }
+}
+.animate-slideIn { animation: slideIn .18s ease-out; }
 
 html,
 body,

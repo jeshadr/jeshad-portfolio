@@ -4,8 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiMail } from "react-icons/ci";
 import { FaRegFolder } from "react-icons/fa";
+import { GoStack } from "react-icons/go";
 import { IoDocumentTextOutline, IoPersonOutline } from "react-icons/io5";
 import { TbPlaylist } from "react-icons/tb";
+
 
 const Library = () => {
   const pathname = usePathname();
@@ -13,6 +15,7 @@ const Library = () => {
   const links = [
     { href: "/projects", label: "Projects", icon: FaRegFolder },
     { href: "/experience", label: "Experience & Skills", icon: IoDocumentTextOutline },
+    { href: "/techstack", label: "Techstack", icon: GoStack},
     { href: "/contact", label: "Contact", icon: CiMail },
     { href: "/about", label: "About Me", icon: IoPersonOutline },
   ];
