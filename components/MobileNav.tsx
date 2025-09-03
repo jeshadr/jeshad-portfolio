@@ -3,7 +3,7 @@
 import { NAV_LINKS } from "@/data/nav";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
 type Props = {
@@ -11,34 +11,58 @@ type Props = {
   onClose: () => void;
 };
 
+const EXIT_MS = 220; // match .animate-slideOut duration
+
 export default function MobileNav({ open, onClose }: Props) {
-  // Lock scroll when open
+  // keep rendered while closing so we can animate out
+  const [shouldRender, setShouldRender] = useState(open);
+  const [isClosing, setIsClosing] = useState(false);
+
+  // mount/unmount choreography
   useEffect(() => {
-    if (!open) return;
+    if (open) {
+      setShouldRender(true);
+      setIsClosing(false);
+      return;
+    }
+    if (shouldRender) {
+      setIsClosing(true);
+      const t = setTimeout(() => {
+        setShouldRender(false);
+        setIsClosing(false);
+      }, EXIT_MS);
+      return () => clearTimeout(t);
+    }
+  }, [open, shouldRender]);
+
+  // lock scroll while the sheet is visible (including during closing)
+  useEffect(() => {
+    if (!shouldRender) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = prev;
     };
-  }, [open]);
+  }, [shouldRender]);
 
-  if (!open) return null;
+  if (!shouldRender) return null;
 
   return (
     <div
-      className="
+      className={`
         fixed inset-0 z-[60]
         bg-black/60 backdrop-blur-sm
-      "
+        ${isClosing ? "animate-fadeOut" : "animate-fadeIn"}
+      `}
       onClick={onClose}
     >
       <aside
-        className="
+        className={`
           absolute left-0 top-0 h-full w-[82%] max-w-[360px]
           bg-neutral-950 border-r border-white/10
           p-4 flex flex-col gap-2
-          animate-slideIn
-        "
+          ${isClosing ? "animate-slideOut" : "animate-slideIn"}
+        `}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header row */}
@@ -66,11 +90,7 @@ export default function MobileNav({ open, onClose }: Props) {
                 <Link
                   href={l.href}
                   onClick={onClose}
-                  className="
-                    flex items-center gap-3 px-3 py-3
-                    rounded-lg text-neutral-200 hover:text-white
-                    hover:bg-white/5 transition
-                  "
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg text-neutral-200 hover:text-white hover:bg-white/5 transition"
                 >
                   {l.icon ? <l.icon size={20} /> : null}
                   <span className="truncate">{l.label}</span>
@@ -80,7 +100,7 @@ export default function MobileNav({ open, onClose }: Props) {
           </ul>
         </nav>
 
-        {/* Footer (optional quick actions) */}
+        {/* Footer */}
         <div className="mt-auto pt-3">
           <a
             href="/resume.pdf"
