@@ -10,11 +10,10 @@ export default function Home() {
         <div className="mb-2">
           <h1 className="text-white text-4xl font-semibold">Welcome to Jeshadify!</h1>
           <p className="text-neutral-400 text-sm mt-1">
-            My Spotify-themed portfolio where you can explore my projects, skills, and experience!
+            A Spotify-themed portfolio where you can explore my projects, skills, and experience!
           </p>
         </div>
       </Header>
-
       <div className="mt-5 mb-7">
         <PageContent />
       </div>

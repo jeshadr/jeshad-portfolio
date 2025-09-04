@@ -36,8 +36,8 @@ const Liked = () => {
                             sm:text-5xl
                             lg:text-7xl
                             font-bold">About me</h1>
-                            <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
-                                Take a step into my life
+                            <p className="hidden mx-1 my-3 md:block text-neutral-400 font-semibold text-sm">
+                            A quick look at who I am beyond the code — my journey, passions, and the things I enjoy.
                             </p>
 
                         </div>

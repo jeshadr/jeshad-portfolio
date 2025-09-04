@@ -47,8 +47,8 @@ const Liked = () => {
                             sm:text-5xl
                             lg:text-7xl
                             font-bold">My Projects</h1>
-                            <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
-                                A few things I&apos;ve built across full stack, app development, MLL model, and games.
+                            <p className="hidden mx-1 my-3 md:block text-neutral-400 font-semibold text-sm">
+                                A few things I&apos;ve built across full stack, app development, text-neutral-400 MLL model, and games.
                             </p>
 
                         </div>

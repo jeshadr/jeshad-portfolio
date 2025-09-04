@@ -39,15 +39,15 @@ const Liked = () => {
                         gap-y-2
                         mt-4
                         md:mt-0">
-                            <p className="hidden mx-1 md:block font-semibold text-sm">
-                                Playlist
-                            </p>
                             <h1 className="
                             text-white
                             text-4xl
                             sm:text-5xl
                             lg:text-7xl
                             font-bold">My Techstack</h1>
+                            <p className="hidden mx-1 my-3 md:block text-neutral-400 font-semibold text-sm">
+                            A curated playlist of the tools, frameworks, and languages I use to design, build, and ship projects.
+                            </p>
                         </div>
                     </div>
                 </div>

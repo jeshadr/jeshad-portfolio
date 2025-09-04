@@ -47,7 +47,7 @@ const Liked = () => {
                             sm:text-5xl
                             lg:text-7xl
                             font-bold">Experience & Skills</h1>
-                            <p className="hidden mx-1 my-3 md:block font-semibold text-sm">
+                            <p className="hidden mx-1 my-3 md:block font-semibold text-neutral-400 text-sm">
                                 A concise snapshot of the apps, tools, and impact I&apos;ve built.
                             </p>
 
