@@ -11,7 +11,7 @@ type UiContextType = {
 const UiContext = createContext<UiContextType | null>(null);
 
 export function UiProvider({ children }: { children: React.ReactNode }) {
-  const [showArtistBar, setShowArtistBar] = useState(true); // default: visible
+  const [showArtistBar, setShowArtistBar] = useState(false); // default: hidden
   const toggleArtistBar = () => setShowArtistBar(v => !v);
 
   return (
