@@ -1,7 +1,40 @@
 import Header from "@/components/Header";
+import YouMightAlsoLike, { YMALItem } from "@/components/Mobile/YouMightLike";
+import { PROJECTS } from "@/data/skills";
 import Image from "next/image";
 import LikedContent from "./components/likedContent";
-const Liked = () => {
+
+export default function Liked() {
+        const mobileTracks = PROJECTS.map((p) => ({
+            id: `proj-${p.name}`,
+            title: p.name,
+            subtitle: p.created,
+            description: p.description,
+            image: p.image,
+            href: p.link,
+        }));
+    
+        const alsoLike: YMALItem[] = [
+            {
+                title: "Experience",
+                description: "Roles, skills, and highlights from work.",
+                image: "/images/playlists/experiencelogo.png",
+                href: "/experience",
+            },
+            {
+                title: "Contact",
+                description: "Reach out to collaborate or say hi.",
+                image: "/images/playlists/jeshadgpt.png",
+                href: "/contact",
+            },
+                {
+            title: "Projects",
+            description: "A showcase of apps, models, and builds I’ve worked on.",
+            image: "/images/playlists/projectslogo.png",
+            href: "/projects",
+        },
+    
+        ];
     return (
         <div
             className="
@@ -31,7 +64,7 @@ const Liked = () => {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/techicon.png" />
+                                src="/images/playlists/techicon.png" />
                         </div>
                         <div className="
                         flex
@@ -53,8 +86,7 @@ const Liked = () => {
                 </div>
             </Header>
             <LikedContent />
+            <YouMightAlsoLike items={alsoLike} className="pb-28" />
         </div>
     )
 }
-
-export default Liked;

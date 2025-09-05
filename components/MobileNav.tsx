@@ -71,7 +71,7 @@ export default function MobileNav({ open, onClose }: Props) {
           >
             <div className="relative h-20 w-20 rounded-md overflow-hidden bg-neutral-800">
               <Image
-                src="/images/jeshadifyprojectlogo.png"
+                src="/images/projects/jeshadifyprojectlogo.png"
                 alt="Logo"
                 fill
                 className="object-cover"

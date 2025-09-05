@@ -22,19 +22,19 @@ export default function ProjectsPage() {
         {
             title: "Experience",
             description: "Roles, skills, and highlights from work.",
-            image: "/images/experiencelogo.png",
+            image: "/images/playlists/experiencelogo.png",
             href: "/experience",
         },
         {
             title: "Contact",
             description: "Reach out to collaborate or say hi.",
-            image: "/images/jeshadgpt.png",
+            image: "/images/playlists/jeshadgpt.png",
             href: "/contact",
         },
         {
             title: "About Me",
             description: "Quick intro and what I care about.",
-            image: "/images/aboutmelogo.png",
+            image: "/images/playlists/aboutmelogo.png",
             href: "/about",
         },
 
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/projectslogo.png"
+                                src="/images/playlists/projectslogo.png"
                             />
                         </div>
 
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
             <YouMightAlsoLike items={alsoLike} className="pb-28" />
 
             {/* Bottom player sheet for mobile */}
-            <MobilePlayerSheet />
+            <MobilePlayerSheet title="My Projects"/>
         </div>
     );
 }

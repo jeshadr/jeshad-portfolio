@@ -13,8 +13,8 @@ export type NavLink = {
 
 export const NAV_LINKS = [
   { label: "Projects", href: "/projects", icon: FaRegFolder },
-  { label: "Techstack", href: "/techstack", icon: GoStack},
   { label: "Experience & Skills", href: "/experience", icon: IoDocumentTextOutline },
+  { label: "Techstack", href: "/techstack", icon: GoStack},
   { label: "Contact", href: "/contact", icon: CiMail },
   { label: "About Me", href: "/about", icon: IoPersonOutline },
 ];

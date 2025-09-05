@@ -1,11 +1,13 @@
 "use client";
 
+import SongHint from "@/components/Mobile/SongHint";
 import { EXPERIENCES } from "@/data/skills";
 import Image from "next/image";
 
 export default function ProjectContent() {
   return (
     <div className="px-6 pb-24">
+      <SongHint />
       <div className="mt-6 flex flex-col divide-y divide-white/10">
         {EXPERIENCES.map((p, i) => (
           <a

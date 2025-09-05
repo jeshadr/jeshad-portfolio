@@ -12,7 +12,7 @@ export default function PageContent() {
   return (
     <div className="space-y-8">
       {/* My Techstack */}
-      <section className="px-6 mt-6">
+      <section className="px-6 mt-0 md:mt-6">
         <div className="rounded-xl bg-neutral-900/50 border border-neutral-900/50 overflow-hidden">
           <div className="flex items-center justify-between px-4 sm:px-6 py-4">
             <h2 className="text-white text-2xl font-semibold">My Techstack</h2>

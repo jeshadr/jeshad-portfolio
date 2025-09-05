@@ -43,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
       </div>
 
       {/* Main */}
-      <main className="h-full flex-1 overflow-y-auto py-2 min-h-0 custom-scrollbar">
+      <main className="h-full flex-1 overflow-y-auto min-h-0 custom-scrollbar py-0 md:py-2">
         {children}
       </main>
 

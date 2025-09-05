@@ -9,7 +9,7 @@ export default function AboutContent() {
       <section className="flex flex-col items-center text-center space-y-4">
         <div className="relative h-40 w-40 md:h-64 md:w-64 rounded-full overflow-hidden bg-neutral-800">
           <Image
-            src="/images/jeshadimage.jpg"
+            src="/images/about/jeshadimage.jpg"
             alt="Jeshad Rahman"
             fill
             className="object-cover"
@@ -26,14 +26,14 @@ export default function AboutContent() {
 
       {/* Favorite Games Section */}
       <section>
-        <h2 className="text-white text-2xl font-semibold mb-4">Games I Like</h2>
+        <h2 className="text-white text-2xl font-semibold mb-4">Games I Like 🎮</h2>
         <div className="flex gap-4 overflow-x-auto no-scrollbar">
           {[
-            { title: "Minecraft", src: "/images/minecraft.png" },
-            { title: "Elden Ring", src: "/images/elden.png" },
-            { title: "Counter Strike 2", src: "/images/cs2.png" },
-            { title: "Roblox", src: "/images/roblox.png" },
-            { title: "Terraria", src: "/images/terraria.png" },
+            { title: "Minecraft", src: "/images/about/minecraft.png" },
+            { title: "Elden Ring", src: "/images/about/elden.png" },
+            { title: "Counter Strike 2", src: "/images/about/cs2.png" },
+            { title: "Roblox", src: "/images/about/roblox.png" },
+            { title: "Terraria", src: "/images/about/terraria.png" },
           ].map((g) => (
             <div
               key={g.title}
@@ -53,11 +53,14 @@ export default function AboutContent() {
         <h2 className="text-white text-2xl font-semibold mb-4">My Gallery 🎥</h2>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
           {[
-            "/images/friends5.jpg",
-            "/images/friends2.jpg",
-            "/images/friends3.jpg",
-            "/images/friends1.jpg",
-            "/images/friends4.jpg",
+            "/images/about/friends5.jpg",
+            "/images/about/gallery2.jpg",
+            "/images/about/friends2.jpg",
+            "/images/about/friends3.jpg",
+            "/images/about/gallery1.jpg",
+            "/images/about/friends1.jpg",
+            "/images/about/gallery3.jpg",
+            "/images/about/friends4.jpg",
 
           ].map((src, i) => (
             <div

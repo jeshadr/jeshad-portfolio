@@ -16,8 +16,8 @@ export default function SortHint() {
       <button
         onClick={() => setOpen(false)}
         className="
-          w-96 text-left rounded-xl border border-white/10
-          bg-neutral-900/95 shadow-xl backdrop-blur
+          w-96 text-left rounded-xl border border-white/20
+          bg-neutral-900/100 shadow-xl backdrop-blur
           p-5 flex items-start gap-4 hover:bg-neutral-800 transition
         "
       >

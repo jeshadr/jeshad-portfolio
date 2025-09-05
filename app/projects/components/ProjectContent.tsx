@@ -2,11 +2,14 @@
 
 import { PROJECTS } from "@/data/skills";
 import Image from "next/image";
-
+import SongHint from "../../../components/Mobile/SongHint";
 
 export default function ProjectContent() {
   return (
     <div className="px-6 pb-24">
+      {/* Mobile hint popup */}
+      <SongHint />
+
       <div className="mt-6 flex flex-col divide-y divide-white/10">
         {PROJECTS.map((p, i) => (
           <a

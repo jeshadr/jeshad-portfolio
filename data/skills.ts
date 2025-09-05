@@ -5,25 +5,25 @@ export type SkillTile = {
 };
 
 export const SKILL_TILES: SkillTile[] = [
-  { name: "Java", image: "/images/java.svg" },
-  { name: "JavaScript", image: "/images/javascript.svg" },
-  { name: "TypeScript", image: "/images/typescript.svg" },
-  { name: "Python", image: "/images/python.svg" },
-  { name: "C++", image: "/images/cpp.svg" },
-  { name: "C#", image: "/images/csharp.svg" },
+  { name: "Java", image: "/images/techstack/java.svg" },
+  { name: "JavaScript", image: "/images/techstack/javascript.svg" },
+  { name: "TypeScript", image: "/images/techstack/typescript.svg" },
+  { name: "Python", image: "/images/techstack/python.svg" },
+  { name: "C++", image: "/images/techstack/cpp.svg" },
+  { name: "C#", image: "/images/techstack/csharp.svg" },
 ];
 
 export const FRONTEND_TILES: SkillTile[] = [
-  { name: "React", image: "/images/react.svg" },
-  { name: "Next.js", image: "/images/nextjs.svg" },
-  { name: "Tailwind CSS", image: "/images/tailwind.svg" },
-  { name: "HTML", image: "/images/html.svg" },
-  { name: "CSS", image: "/images/css.svg" },
+  { name: "React", image: "/images/techstack/react.svg" },
+  { name: "Next.js", image: "/images/techstack/nextjs.svg" },
+  { name: "Tailwind CSS", image: "/images/techstack/tailwind.svg" },
+  { name: "HTML", image: "/images/techstack/html.svg" },
+  { name: "CSS", image: "/images/techstack/css.svg" },
 ];
 
 export const BACKEND_TILES: SkillTile[] = [
-  { name: "Node.js", image: "/images/nodejs.svg" },
-  { name: "ASP.NET", image: "/images/aspx.svg", },
+  { name: "Node.js", image: "/images/techstack/nodejs.svg" },
+  { name: "ASP.NET", image: "/images/techstack/aspx.svg", },
 ];
 
 export type Tech = {
@@ -34,12 +34,12 @@ export type Tech = {
 };
 
 export const TECHS: Tech[] = [
-  { name: "HTML", icon: "/images/html.svg", subtitle: "Website Development", proficiency: "Expert" },
-  { name: "React", icon: "/images/react.svg", subtitle: "Website Development", proficiency: "Intermediate" },
-  { name: "TypeScript", icon: "/images/typescript.svg", subtitle: "Web Development", proficiency: "Advanced" },
-  { name: "Node.js", icon: "/images/nodejs.svg", subtitle: "Backend Development", proficiency: "Intermediate" },
-  { name: "Python", icon: "/images/python.svg", subtitle: "Scripting & ML", proficiency: "Intermediate" },
-  { name: "Tailwind", icon: "/images/tailwind.svg", subtitle: "UI Engineering", proficiency: "Advanced" },
+  { name: "HTML", icon: "/images/techstack/html.svg", subtitle: "Website Development", proficiency: "Expert" },
+  { name: "React", icon: "/images/techstack/react.svg", subtitle: "Website Development", proficiency: "Intermediate" },
+  { name: "TypeScript", icon: "/images/techstack/typescript.svg", subtitle: "Web Development", proficiency: "Advanced" },
+  { name: "Node.js", icon: "/images/techstack/nodejs.svg", subtitle: "Backend Development", proficiency: "Intermediate" },
+  { name: "Python", icon: "/images/techstack/python.svg", subtitle: "Scripting & ML", proficiency: "Intermediate" },
+  { name: "Tailwind", icon: "/images/techstack/tailwind.svg", subtitle: "UI Engineering", proficiency: "Advanced" },
 ];
 
 export type ProjectCard = {
@@ -59,19 +59,19 @@ export const PROJECT_CARDS: ProjectCard[] = [
   {
     title: "PinchDraw",
     description: "Real-time gesture drawing app using camera pinch detection.",
-    image: "/images/pinchdraw.png",
+    image: "/images/projects/pinchdraw.png",
     href: "https://github.com/jeshadr/PinchDraw",
   },
   {
     title: "Daves Calorie Calc",
     description: "Fast food calorie tracker with cart flows and spice-level selection.",
-    image: "/images/daves2.png",
+    image: "/images/projects/daves2.png",
     href: "https://github.com/jeshadr/DavesCalorieCalculator",
   },
   {
     title: "BC Prediction",
     description: "Machine learning model achieving 96.5% accuracy on tumor classification.",
-    image: "/images/ml.png",
+    image: "/images/projects/ml.png",
     href: "https://github.com/jeshadr/MachineLearningModel",
   },
 ];
@@ -91,7 +91,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "Irenic Therapeutic Services",
     role: "Software Engineering Intern",
-    image: "/images/ireniclogo.png",
+    image: "/images/experience/ireniclogo.png",
     description:
       "Secure, scalable app development in a healthcare environment with HIPAA compliance.",
     created: "Jul. 2025 - Present",
@@ -106,7 +106,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "Web Surfing Studios",
     role: "Junior Software Developer",
-    image: "/images/wss.png",
+    image: "/images/experience/websurfing.png",
     description:
       "Collaborative full-stack development with emphasis on code reviews and Git workflows.",
     created: "Jul. 2025 - Present",
@@ -121,7 +121,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "Institute for Digital Inclusion Acceleration",
     role: "Digital Navigator",
-    image: "/images/idialogo.png",
+    image: "/images/experience/idiaclean.png",
     description:
       "Community-facing role bridging digital literacy and access to technology.",
     created: "Aug. 2025 - Present",
@@ -148,7 +148,7 @@ type Project = {
 export const PROJECTS: Project[] = [
   {
     name: "Jeshadify",
-    image: "/images/jeshadifyprojectlogo.png",
+    image: "/images/projects/jeshadifyprojectlogo.png",
     description:
       "A Spotify-inspired portfolio app that centralizes my work — projects, experience, and skills — with playlist-style navigation, artist-like highlights, and a clean interactive layout.",
     created: "Sep. 2025",
@@ -157,7 +157,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "PinchDraw",
-    image: "/images/pinchdraw.png",
+    image: "/images/projects/pinchdraw.png",
     description:
       "Real-time camera-based gesture app converting pinch motions into brush strokes with fingertip alignment.",
     created: "Jul. 2025",
@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Dave’s Calorie Calculator",
-    image: "/images/daves2.png",
+    image: "/images/projects/daves2.png",
     description:
       "Fast food calorie tracker with spice-level selection and cart flows, deployed via Azure App Service.",
     created: "Jun. 2025",
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Breast Cancer Prediction Model",
-    image: "/images/ml.png",
+    image: "/images/projects/ml.png",
     description:
       "ML model achieving 96.5% accuracy on tumor classification using logistic regression and Kaggle dataset.",
     created: "Aug. 2025",
@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "2D RPG Game",
-    image: "/images/comingsoon.png",
+    image: "/images/projects/comingsoon.png",
     description:
       "Lightweight 2D RPG-style game showcasing foundational game mechanics and animation logic.",
     created: "In-progress",
@@ -206,42 +206,42 @@ export type SkillRow = {
 export const SKILL_SONGS: SkillRow[] = [
   {
     name: "Java",
-    icon: "/images/java.svg",
+    icon: "/images/techstack/java.svg",
     category: "Language",
     since: "2021",
     proficiency: "3–4y",
   },
   {
     name: "JavaScript",
-    icon: "/images/javascript.svg",
+    icon: "/images/techstack/javascript.svg",
     category: "Language",
     since: "2019",
     proficiency: "5–6y",
   },
   {
     name: "TypeScript",
-    icon: "/images/typescript.svg",
+    icon: "/images/techstack/typescript.svg",
     category: "Language",
     since: "2023",
     proficiency: "1–2y",
   },
   {
     name: "Python",
-    icon: "/images/python.svg",
+    icon: "/images/techstack/python.svg",
     category: "Language",
     since: "2023",
     proficiency: "1–2y",
   },
   {
     name: "C++",
-    icon: "/images/cpp.svg",
+    icon: "/images/techstack/cpp.svg",
     category: "Language",
     since: "2022",
     proficiency: "2–3y",
   },
   {
     name: "C#",
-    icon: "/images/csharp.svg",
+    icon: "/images/techstack/csharp.svg",
     category: "Language",
     since: "2022",
     proficiency: "2–3y",
@@ -250,35 +250,35 @@ export const SKILL_SONGS: SkillRow[] = [
   //Frontend
   {
     name: "React",
-    icon: "/images/react.svg",
+    icon: "/images/techstack/react.svg",
     category: "Frontend",
     since: "2024",
     proficiency: "0-1y",
   },
   {
     name: "Next.js",
-    icon: "/images/nextjs.svg",
+    icon: "/images/techstack/nextjs.svg",
     category: "Frontend",
     since: "2024",
     proficiency: "1–2y",
   },
   {
     name: "Tailwind CSS",
-    icon: "/images/tailwind.svg",
+    icon: "/images/techstack/tailwind.svg",
     category: "Frontend",
     since: "2025",
     proficiency: "0–1y",
   },
   {
     name: "HTML 5",
-    icon: "/images/html.svg",
+    icon: "/images/techstack/html.svg",
     category: "Frontend",
     since: "2020",
     proficiency: "4–5y",
   },
   {
     name: "CSS",
-    icon: "/images/css.svg",
+    icon: "/images/techstack/css.svg",
     category: "Frontend",
     since: "2022",
     proficiency: "2–3y",
@@ -286,14 +286,14 @@ export const SKILL_SONGS: SkillRow[] = [
   //Backend
   {
     name: "Node.js",
-    icon: "/images/nodejs.svg",
+    icon: "/images/techstack/nodejs.svg",
     category: "Backend",
     since: "2025",
     proficiency: "0–1y",
   },
   {
     name: "ASP.NET",
-    icon: "/images/aspx.svg",
+    icon: "/images/techstack/aspx.svg",
     category: "Backend",
     since: "2023",
     proficiency: "1–2y",
@@ -301,21 +301,21 @@ export const SKILL_SONGS: SkillRow[] = [
   //Cloud/DevOps
   {
     name: "AWS",
-    icon: "/images/aws2.svg",
+    icon: "/images/techstack/aws2.svg",
     category: "Cloud/DevOps",
     since: "2023",
     proficiency: "1–2y",
   },
   {
     name: "Docker",
-    icon: "/images/docker.svg",
+    icon: "/images/techstack/docker.svg",
     category: "Cloud/DevOps",
     since: "2025",
     proficiency: "0–1y",
   },
   {
     name: "Azure",
-    icon: "/images/azure.svg",
+    icon: "/images/techstack/azure.svg",
     category: "Cloud/DevOps",
     since: "2023",
     proficiency: "1–2y",

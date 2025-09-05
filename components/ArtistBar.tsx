@@ -24,7 +24,7 @@ export default function ArtistBar() {
           <div className="p-4">
             <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-neutral-900">
               <Image
-                src="/images/jeshad.png"
+                src="/images/about/jeshad.png"
                 alt="Jeshad"
                 fill
                 className="object-cover"
@@ -79,8 +79,11 @@ export default function ArtistBar() {
             <h3 className="text-white font-semibold">Fun Facts</h3>
             <div className="mt-3 text-sm text-neutral-300">
               • Love going on hikes<br />
-              • Big fan of shows — currently watching &apos;Wednesday&apos;<br />
+              • Big fan of movies & shows <br />
               • Love to eat out<br />
+              • Big fan of hot chicken... <br />
+              • Coffee enthusiast <br />
+              • Love cats<br />
               • Enjoy going to the gym
             </div>
           </div>
@@ -91,7 +94,7 @@ export default function ArtistBar() {
           <div className="p-4">
             <h3 className="text-white font-semibold">Currently Building</h3>
             <div className="mt-2 text-sm text-neutral-300">
-              Journaling app features, RN + Node. Exploring small LLM tools.
+              ASL Translator using Python + Tensorflow + OpenCV. Exploring small LLM tools.
             </div>
           </div>
         </Box>

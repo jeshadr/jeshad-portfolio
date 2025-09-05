@@ -20,19 +20,19 @@ export default function Experience() {
         {
             title: "Projects",
             description: "A showcase of apps, models, and builds I’ve worked on.",
-            image: "/images/projectslogo.png",
+            image: "/images/playlists/projectslogo.png",
             href: "/projects",
         },
         {
             title: "Contact",
             description: "Reach out to collaborate or say hi.",
-            image: "/images/jeshadgpt.png",
+            image: "/images/playlists/jeshadgpt.png",
             href: "/contact",
         },
         {
             title: "About Me",
             description: "Quick intro and what I care about.",
-            image: "/images/aboutmelogo.png",
+            image: "/images/playlists/aboutmelogo.png",
             href: "/about",
         },
 
@@ -69,7 +69,7 @@ export default function Experience() {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/experiencelogo.png" />
+                                src="/images/playlists/experiencelogo.png" />
                         </div>
                         <div className="
                         flex
@@ -92,7 +92,7 @@ export default function Experience() {
             </Header>
             {/* Mobile: song-style list */}
             <section className="md:hidden px-2 pt-2">
-                <MobileSongList items={mobileTracks} title="Projects" />
+                <MobileSongList items={mobileTracks} title="Experience" />
             </section>
 
             {/* Desktop: existing project content */}
@@ -104,7 +104,7 @@ export default function Experience() {
             <YouMightAlsoLike items={alsoLike} className="pb-28" />
 
             {/* Bottom player sheet for mobile */}
-            <MobilePlayerSheet />
+            <MobilePlayerSheet title="Experiences"/>
         </div>
     )
 }

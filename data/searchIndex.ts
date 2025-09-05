@@ -47,11 +47,11 @@ const experienceItems: SearchItem[] = (EXPERIENCES ?? []).map((e) => ({
 
 // ---- Top-level  ----
 const pageItems: SearchItem[] = [
-  { id: "page-projects",   title: "Projects",          href: "/projects",   section: "Pages", icon: "/images/myprojectsicon.png" },
-  { id: "page-techstack",  title: "Techstack",         href: "/techstack",  section: "Pages", icon: "/images/techstackPlaylist.png" },
-  { id: "page-experience", title: "Experience & Skills", href: "/experience", section: "Pages", icon: "/images/experienceicon.png" },
-  { id: "page-contact",    title: "Contact",           href: "/contact",    section: "Pages", icon: "/images/jeshadgpt.png" },
-  { id: "page-about",      title: "About Me",          href: "/about",      section: "Pages", icon: "/images/aboutme.png" },
+  { id: "page-projects",   title: "Projects",          href: "/projects",   section: "Pages", icon: "/images/playlists/projectslogo.png" },
+  { id: "page-techstack",  title: "Techstack",         href: "/techstack",  section: "Pages", icon: "/images/playlists/techicon.png" },
+  { id: "page-experience", title: "Experience & Skills", href: "/experience", section: "Pages", icon: "/images/playlists/experiencelogo.png" },
+  { id: "page-contact",    title: "Contact",           href: "/contact",    section: "Pages", icon: "/images/playlists/jeshadgpt.png" },
+  { id: "page-about",      title: "About Me",          href: "/about",      section: "Pages", icon: "/images/playlists/aboutmelogo.png" },
 ];
 
 
