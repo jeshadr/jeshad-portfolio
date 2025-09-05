@@ -1,8 +1,44 @@
 import Header from "@/components/Header";
+import MobilePlayerSheet from "@/components/Mobile/MobilePlayerSheet";
+import MobileSongList from "@/components/Mobile/MobileSongList";
+import YouMightAlsoLike, { YMALItem } from "@/components/Mobile/YouMightLike";
+import { EXPERIENCES } from "@/data/skills";
 import Image from "next/image";
 import PageContent from "./components/PageContent";
 
-const Liked = () => {
+export default function Experience() {
+    const mobileTracks = EXPERIENCES.map((p) => ({
+        id: `exp-${p.company}`,
+        title: p.company,
+        subtitle: p.created,
+        description: p.description,
+        image: p.image,
+        href: p.link,
+    }));
+
+    const alsoLike: YMALItem[] = [
+        {
+            title: "Projects",
+            description: "A showcase of apps, models, and builds I’ve worked on.",
+            image: "/images/projectslogo.png",
+            href: "/projects",
+        },
+        {
+            title: "Contact",
+            description: "Reach out to collaborate or say hi.",
+            image: "/images/jeshadgpt.png",
+            href: "/contact",
+        },
+        {
+            title: "About Me",
+            description: "Quick intro and what I care about.",
+            image: "/images/aboutmelogo.png",
+            href: "/about",
+        },
+
+    ];
+
+
     return (
         <div
             className="
@@ -50,14 +86,25 @@ const Liked = () => {
                             <p className="hidden mx-1 my-3 md:block font-semibold text-neutral-400 text-sm">
                                 A concise snapshot of the apps, tools, and impact I&apos;ve built.
                             </p>
-
                         </div>
                     </div>
                 </div>
             </Header>
-            <PageContent />
+            {/* Mobile: song-style list */}
+            <section className="md:hidden px-2 pt-2">
+                <MobileSongList items={mobileTracks} title="Projects" />
+            </section>
+
+            {/* Desktop: existing project content */}
+            <section className="hidden md:block">
+                <PageContent />
+            </section>
+
+            {/* You might also like */}
+            <YouMightAlsoLike items={alsoLike} className="pb-28" />
+
+            {/* Bottom player sheet for mobile */}
+            <MobilePlayerSheet />
         </div>
     )
 }
-
-export default Liked;

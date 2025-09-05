@@ -1,5 +1,6 @@
 import Sidebar from "@/components/Sidebar";
 
+import { MobilePlayerProvider } from "@/components/Mobile/MobilePlayerProvider";
 import { UiProvider } from "@/components/UiProvider";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
@@ -24,9 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={font.className}>
-        <UiProvider>
-          <Sidebar>{children}</Sidebar>
-        </UiProvider>
+        <MobilePlayerProvider>
+          <UiProvider>
+            <Sidebar>{children}</Sidebar>
+          </UiProvider>
+        </MobilePlayerProvider>
       </body>
     </html>
   );
