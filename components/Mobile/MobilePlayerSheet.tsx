@@ -371,6 +371,17 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
           </div>
         </div>
       </div>
+      {/* Bottom cover to eliminate the gap on iOS */}
+<div
+  aria-hidden
+  className="pointer-events-none fixed left-0 right-0 bottom-0 z-0"
+  style={{
+    // fill the iPhone home-indicator + Safari bottom chrome area
+    height: "calc(env(safe-area-inset-bottom) + var(--ios-bottom-ui, 0px) + 24px)",
+    background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,1) 100%)"
+  }}
+/>
+
     </div>
   );
 }
