@@ -1,4 +1,3 @@
-// components/MobilePlayerSheet.tsx
 "use client";
 
 import { useProgressTicker } from "@/hooks/useProgressTicker";
@@ -13,7 +12,7 @@ import { useMobilePlayer } from "./MobilePlayerProvider";
 
 const EXIT_MS = 180;
 const TRACK_SECONDS = 60;
-const ANIM_MS = 300; // matches duration-300
+const ANIM_MS = 300;
 
 function formatTime(s: number) {
   const m = Math.floor(s / 60);
@@ -64,7 +63,6 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
     };
   }, []);
 
-  // Lift controls above iOS Safari bottom UI using VisualViewport
   useEffect(() => {
     if (typeof window === "undefined" || !window.visualViewport) return;
 
@@ -372,17 +370,6 @@ pb-0
           </div>
         </div>
       </div>
-      {/* Bottom cover to eliminate the gap on iOS */}
-      <div
-        aria-hidden
-        className="pointer-events-none fixed left-0 right-0 bottom-0 z-0"
-        style={{
-          // fill the iPhone home-indicator + Safari bottom chrome area
-          height: "calc(env(safe-area-inset-bottom) + var(--ios-bottom-ui, 0px) + 24px)",
-          background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,1) 100%)"
-        }}
-      />
-
     </div>
   );
 }
