@@ -95,7 +95,6 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Secure, scalable app development in a healthcare environment with HIPAA compliance.",
     created: "Jul. 2025 - Present",
-    link: "https://github.com/jeshadr/jeshad-portfolio",
     tags: ["Next.js", "React", "TypeScript", "Tailwind", "Node.js"],
     bullets: [
       "Designed backend services with encrypted storage and audit logging",
@@ -110,7 +109,7 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Collaborative full-stack development with emphasis on code reviews and Git workflows.",
     created: "Jul. 2025 - Present",
-    link: "https://github.com/jeshadr/PinchDraw",
+    link: "https://www.websurfingstudios.com/",
     tags: ["JavaScript", "HTML", "CSS"],
     bullets: [
       "Contributed to Phase 1 engineering program with structured onboarding",
@@ -125,7 +124,7 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Community-facing role bridging digital literacy and access to technology.",
     created: "Aug. 2025 - Present",
-    link: "https://github.com/jeshadr/DavesCalorieCalculator",
+    link: "https://theidia.org/",
     tags: ["Workshops", "Community Support", "Digital Inclusion"],
     bullets: [
       "Facilitated workshops and one-on-one digital literacy training for 50+ people",
