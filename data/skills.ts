@@ -150,7 +150,7 @@ export const PROJECTS: Project[] = [
     name: "Jeshadify",
     image: "/images/projects/jeshadifyprojectlogo.png",
     description:
-      "A Spotify-inspired portfolio app that centralizes my work — projects, experience, and skills — with playlist-style navigation, artist-like highlights, and a clean interactive layout.",
+      "A Spotify-inspired portfolio app that centralizes my work — projects, experience, and skills.",
     created: "Sep. 2025",
     link: "https://github.com/jeshadr/jeshad-portfolio",
     tags: ["Next.js", "React", "JavaScript", "Tailwind", "TypeScript"],
