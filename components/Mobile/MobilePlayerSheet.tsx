@@ -199,7 +199,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         className={`
           absolute inset-0
    flex flex-col h-svh min-h-0 overflow-y-auto
-   pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]
+   pt-[env(safe-area-inset-top)] pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+32px)]
    ${panelAnimClass}
 
         `}
