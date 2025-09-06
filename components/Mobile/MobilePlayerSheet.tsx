@@ -64,6 +64,27 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
     };
   }, []);
 
+  // Lift controls above iOS Safari bottom UI using VisualViewport
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.visualViewport) return;
+
+    const vv = window.visualViewport;
+    const setVar = () => {
+      // Height of the overlaid browser UI at the bottom
+      const offset = Math.max(0, window.innerHeight - Math.floor(vv.height));
+      document.documentElement.style.setProperty("--ios-bottom-ui", `${offset}px`);
+    };
+
+    setVar();
+    vv.addEventListener("resize", setVar);
+    vv.addEventListener("scroll", setVar);
+    return () => {
+      vv.removeEventListener("resize", setVar);
+      vv.removeEventListener("scroll", setVar);
+    };
+  }, []);
+
+
   // auto advance should also animate left
   const handleAutoNext = () => {
     const outgoing = track?.image ?? null;
@@ -177,9 +198,10 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
       <div
         className={`
           absolute inset-0
-          flex flex-col h-dvh min-h-0 overflow-hidden
-          pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]
-          ${panelAnimClass}
+   flex flex-col h-svh min-h-0 overflow-y-auto
+   pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]
+   ${panelAnimClass}
+
         `}
         onClick={(e) => e.stopPropagation()}
         aria-modal="true"
@@ -278,7 +300,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         </div>
 
         {/* Bottom: slider and controls */}
-        <div className="relative z-10 px-5 pt-4 pb-[calc(env(safe-area-inset-bottom)+60px)] mt-auto">
+        <div className="relative z-10 px-5 pt-4 pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+60px)] mt-auto">
           <div>
             <PlayerSlider
               value={progress}
