@@ -199,7 +199,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         className={`
           absolute inset-0
    flex flex-col h-svh min-h-0 overflow-y-auto
-   pt-[env(safe-area-inset-top)] pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+32px)]
+  pt-[env(safe-area-inset-top)] pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+96px)]
    ${panelAnimClass}
 
         `}
@@ -209,7 +209,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         aria-label="Now playing"
         style={{
           background: `linear-gradient(180deg, ${bgColor} 0%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%)`,
-   transition: "background 300ms ease",
+          transition: "background 300ms ease",
         }}
       >
         <div className="pointer-events-none absolute inset-0" style={{ boxShadow: "inset 0 0 120px rgba(0,0,0,0.35)" }} />
@@ -300,11 +300,12 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         </div>
 
         {/* Bottom: slider and controls */}
- <div className="relative z-10 px-5
-  pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+56px)]
+        <div className="relative z-10 px-5
+pb-0
   mt-auto transform-gpu origin-bottom
   scale-[.90] md:scale-100
-  -translate-y-17 md:-translate-y-4">          <div>
+  -translate-y-8 md:-translate-y-4">
+          <div>
             <PlayerSlider
               value={progress}
               max={TRACK_SECONDS}
@@ -372,15 +373,15 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         </div>
       </div>
       {/* Bottom cover to eliminate the gap on iOS */}
-<div
-  aria-hidden
-  className="pointer-events-none fixed left-0 right-0 bottom-0 z-0"
-  style={{
-    // fill the iPhone home-indicator + Safari bottom chrome area
-    height: "calc(env(safe-area-inset-bottom) + var(--ios-bottom-ui, 0px) + 24px)",
-    background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,1) 100%)"
-  }}
-/>
+      <div
+        aria-hidden
+        className="pointer-events-none fixed left-0 right-0 bottom-0 z-0"
+        style={{
+          // fill the iPhone home-indicator + Safari bottom chrome area
+          height: "calc(env(safe-area-inset-bottom) + var(--ios-bottom-ui, 0px) + 24px)",
+          background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,1) 100%)"
+        }}
+      />
 
     </div>
   );
