@@ -38,7 +38,6 @@ Instead of playlists and albums, Jeshadify organizes my **projects, skills, and 
 
 ### Home Page
 ![Home Page](https://gyazo.com/9ca74544dba971eedb3d39c393da5a2e.png)
-<img src="https://gyazo.com/994d15186db26150947f364e817d2da4.jpg" alt="Mobile Home Page" width="250"/>
 
 ### Tech Stack
 ![Tech Stack](https://gyazo.com/b2d78d3b7c02d88cdf8067dee1f1d38f.png)
@@ -48,6 +47,15 @@ Instead of playlists and albums, Jeshadify organizes my **projects, skills, and 
 
 ### Contact Me
 ![Contact Me](https://gyazo.com/a06d8303ffa18ddcfb4ddb7f0fb7bce5.png)
+
+### 📱 Mobile Views
+<p align="center">
+  <img src="https://gyazo.com/994d15186db26150947f364e817d2da4.jpg" alt="Mobile Home Page" width="200"/>
+  <img src="https://gyazo.com/97ac44ed1af155174baf45a9bb10b20b.jpg" alt="Menu Page" width="200"/>
+  <img src="https://gyazo.com/294bb623e735115d5776a66e9a03bb8e.jpg" alt="My Projects Page" width="200"/>
+  <img src="https://gyazo.com/1081385dd4eab7e2b17875e7895e9abc.jpg" alt="Daves Player" width="200"/>
+  <img src="https://gyazo.com/e73d0bf5d2da2ef8e2d91e647f1f6d42.jpg" alt="Jeshadify Player" width="200"/>
+</p>
 
 
 
