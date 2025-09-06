@@ -244,8 +244,8 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-5 flex-shrink-0">
-          <div className="mt-4 mx-auto relative aspect-square w-full max-w-[350px] rounded-lg overflow-hidden bg-neutral-800">
+        <div className="relative z-10 px-5 flex-shrink-0 transform-gpu origin-top scale-[.90] md:scale-100">
+          <div className="mt-9 mx-auto relative aspect-square w-full max-w-[350px] rounded-lg overflow-hidden bg-neutral-800">
             {!coverAnim && track.image && (
               <Image src={track.image} alt={track.title} fill className="object-cover" priority />
             )}
@@ -300,8 +300,11 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         </div>
 
         {/* Bottom: slider and controls */}
-        <div className="relative z-10 px-5 pt-4 pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+100px)] mt-auto">
-          <div>
+ <div className="relative z-10 px-5
+  pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+56px)]
+  mt-auto transform-gpu origin-bottom
+  scale-[.90] md:scale-100
+  -translate-y-25 md:-translate-y-4">          <div>
             <PlayerSlider
               value={progress}
               max={TRACK_SECONDS}
