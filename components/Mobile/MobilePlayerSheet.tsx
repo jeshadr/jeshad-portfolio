@@ -215,7 +215,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         <div className="pointer-events-none absolute inset-0" style={{ boxShadow: "inset 0 0 120px rgba(0,0,0,0.35)" }} />
 
         {/* Header */}
-        <div className="relative z-10 grid grid-cols-3 items-center px-5 py-5">
+        <div className="relative z-10 grid grid-cols-3 items-center px-5 py-9">
           {/* Close button (left) */}
           <button
             onClick={() => {
@@ -245,7 +245,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
 
         {/* Content */}
         <div className="relative z-10 px-5 flex-shrink-0">
-          <div className="mt-16 mx-auto relative aspect-square w-full max-w-[350px] rounded-lg overflow-hidden bg-neutral-800">
+          <div className="mt-4 mx-auto relative aspect-square w-full max-w-[350px] rounded-lg overflow-hidden bg-neutral-800">
             {!coverAnim && track.image && (
               <Image src={track.image} alt={track.title} fill className="object-cover" priority />
             )}
@@ -300,7 +300,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         </div>
 
         {/* Bottom: slider and controls */}
-        <div className="relative z-10 px-5 pt-4 pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+60px)] mt-auto">
+        <div className="relative z-10 px-5 pt-4 pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+100px)] mt-auto">
           <div>
             <PlayerSlider
               value={progress}
