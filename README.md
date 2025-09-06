@@ -3,7 +3,10 @@
 Welcome to **Jeshadify**, my personal developer portfolio inspired by Spotify’s clean and interactive design language.  
 Instead of playlists and albums, Jeshadify organizes my **projects, skills, and experience** into a dynamic, music-like interface.  
 
----
+## 🔗 Live Demo & Repo
+
+- **Live Demo:** [Portfolio Link](https://jeshadr.com)
+- **Repository:** [GitHub Link](https://github.com/jeshadr/jeshad-portfolio)
 
 ## 🚀 Features
 
@@ -22,7 +25,6 @@ Instead of playlists and albums, Jeshadify organizes my **projects, skills, and 
 - **Reusable Components**
   - Built with modular React + Next.js components for scalability.
 
----
 
 ## 🛠️ Tech Stack
 
@@ -31,20 +33,21 @@ Instead of playlists and albums, Jeshadify organizes my **projects, skills, and 
 - **State & Utilities:** Custom hooks, Context providers for UI toggle states  
 - **Other:** Mobile-first design, optimized images with `next/image`
 
----
 
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](https://gyazo.com/17302ef34452ed8f67ae9a16677ad856.png)
+![Home Page](https://gyazo.com/9ca74544dba971eedb3d39c393da5a2e.png)
 
 ### Tech Stack
-![Tech Stack](https://gyazo.com/bc55fc0732f047ce0504ec02e49dd0c6.png)
+![Tech Stack](https://gyazo.com/b2d78d3b7c02d88cdf8067dee1f1d38f.png)
 
 ### Projects
 ![Projects](https://gyazo.com/d0e54c1d923dabdf97b66ae3e209b807.png)
 
----
+### Contact Me
+![Contact Me](https://gyazo.com/a06d8303ffa18ddcfb4ddb7f0fb7bce5.png)
+
 
 ## 📖 What I Learned
 
@@ -52,12 +55,3 @@ Instead of playlists and albums, Jeshadify organizes my **projects, skills, and 
 - Implementing **debounced search indexing** and query filtering in React.
 - Structuring a **responsive layout** with separate mobile and desktop experiences.
 - Building an application that balances **technical detail and creative design**.
-
----
-
-## 🔗 Live Demo & Repo
-
-- **Live Demo:** [Portfolio Link](https://jeshadr.com)
-- **Repository:** [GitHub Link](https://github.com/jeshadr/jeshad-portfolio)
-
----
