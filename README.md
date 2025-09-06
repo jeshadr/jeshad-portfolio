@@ -37,7 +37,7 @@ Instead of playlists and albums, Jeshadify organizes my **projects, skills, and 
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](https://gyazo.com/9ca74544dba971eedb3d39c393da5a2e.png)(https://gyazo.com/994d15186db26150947f364e817d2da4.png)
+![Home Page](https://gyazo.com/9ca74544dba971eedb3d39c393da5a2e.png)(https://gyazo.com/994d15186db26150947f364e817d2da4.jpg)
 
 ### Tech Stack
 ![Tech Stack](https://gyazo.com/b2d78d3b7c02d88cdf8067dee1f1d38f.png)
