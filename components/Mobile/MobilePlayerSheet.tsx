@@ -304,7 +304,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
   pb-[calc(env(safe-area-inset-bottom)+var(--ios-bottom-ui,0px)+56px)]
   mt-auto transform-gpu origin-bottom
   scale-[.90] md:scale-100
-  -translate-y-25 md:-translate-y-4">          <div>
+  -translate-y-17 md:-translate-y-4">          <div>
             <PlayerSlider
               value={progress}
               max={TRACK_SECONDS}
