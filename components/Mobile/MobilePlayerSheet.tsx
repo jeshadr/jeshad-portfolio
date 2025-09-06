@@ -208,8 +208,8 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
         role="dialog"
         aria-label="Now playing"
         style={{
-          background: `linear-gradient(180deg, ${bgColor} 0%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.9) 100%)`,
-          transition: "background 300ms ease",
+          background: `linear-gradient(180deg, ${bgColor} 0%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%)`,
+   transition: "background 300ms ease",
         }}
       >
         <div className="pointer-events-none absolute inset-0" style={{ boxShadow: "inset 0 0 120px rgba(0,0,0,0.35)" }} />
