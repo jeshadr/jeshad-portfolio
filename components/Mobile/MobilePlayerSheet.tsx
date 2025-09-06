@@ -245,7 +245,7 @@ export default function MobilePlayerSheet({ title = "My Projects" }: { title?: s
 
         {/* Content */}
         <div className="relative z-10 px-5 flex-shrink-0">
-          <div className="mt-16 mx-auto relative aspect-square w-full max-w-[420px] rounded-lg overflow-hidden bg-neutral-800">
+          <div className="mt-16 mx-auto relative aspect-square w-full max-w-[350px] rounded-lg overflow-hidden bg-neutral-800">
             {!coverAnim && track.image && (
               <Image src={track.image} alt={track.title} fill className="object-cover" priority />
             )}
