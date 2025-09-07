@@ -63,6 +63,12 @@ export const PROJECT_CARDS: ProjectCard[] = [
     href: "https://github.com/jeshadr/PinchDraw",
   },
   {
+    title: "Work Schedule Bot",
+    description: "Reads schedule emails in Gmail and automatically updates a Notion database.",
+    image: "/images/projects/wsbproject.png",
+    href: "https://github.com/jeshadr/work-schedule-bot",
+  },
+  {
     title: "Daves Calorie Calc",
     description: "Fast food calorie tracker with cart flows and spice-level selection.",
     image: "/images/projects/daves2.png",
@@ -134,7 +140,6 @@ export const EXPERIENCES: Experience[] = [
   },
 ];
 
-
 type Project = {
   name: string;
   image: string;
@@ -162,6 +167,15 @@ export const PROJECTS: Project[] = [
     created: "Jul. 2025",
     link: "https://github.com/jeshadr/PinchDraw",
     tags: ["JavaScript", "HTML", "CSS"],
+  },
+  {
+    name: "Work Schedule Bot",
+    image: "/images/projects/wsbproject.png",
+    description:
+      "Reads schedule emails in Gmail, parses dates, times, locations and notes, and automatically updates into Notion database.",
+    created: "Sep. 2025",
+    link: "https://github.com/jeshadr/work-schedule-bot",
+    tags: ["Python", "API", "OAuth2"],
   },
   {
     name: "Dave’s Calorie Calculator",

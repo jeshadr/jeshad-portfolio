@@ -36,8 +36,7 @@ export default function AboutContent() {
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div className="space-y-10 md:pl-10"> {/* removed md:pl-12 */}
+        <div className="space-y-10 md:pl-10">
           <section>
             <h3 className="text-white text-2xl font-semibold mb-4">Games I Like 🎮</h3>
             <div className="flex gap-4 no-scrollbar">
