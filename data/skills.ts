@@ -62,6 +62,12 @@ export const PROJECT_CARDS: ProjectCard[] = [
     image: "/images/projects/pinchdraw.png",
     href: "https://github.com/jeshadr/PinchDraw",
   },
+    {
+    title: "Personal Chatbot",
+    description: "An interactive chatbot to learn about my projects, skills, and experience in a conversational way.",
+    image: "/images/projects/jeshadchatbot.png",
+    href: "https://github.com/jeshadr/jeshad-bio-chatbot",
+  },
   {
     title: "Work Schedule Bot",
     description: "Reads schedule emails in Gmail and automatically updates a Notion database.",
@@ -155,7 +161,7 @@ export const PROJECTS: Project[] = [
     image: "/images/projects/jeshadifyprojectlogo.png",
     description:
       "A Spotify-inspired portfolio app that centralizes my work — projects, experience, and skills.",
-    created: "Sep. 2025",
+    created: "Aug. 2025 - Sep. 2025",
     link: "https://github.com/jeshadr/jeshad-portfolio",
     tags: ["Next.js", "React", "JavaScript", "Tailwind", "TypeScript"],
   },
@@ -164,9 +170,18 @@ export const PROJECTS: Project[] = [
     image: "/images/projects/pinchdraw.png",
     description:
       "Real-time camera-based gesture app converting pinch motions into brush strokes with fingertip alignment.",
-    created: "Jul. 2025",
+    created: "Jun. 2025 - Jul. 2025",
     link: "https://github.com/jeshadr/PinchDraw",
     tags: ["JavaScript", "HTML", "CSS"],
+  },
+  {
+    name: "Personal Chatbot",
+    image: "/images/projects/jeshadchatbot.png",
+    description:
+      "An interactive chatbot that lets recruiters and visitors learn about my projects, skills, and experience in a conversational way.",
+    created: "Sep. 2025",
+    link: "https://github.com/jeshadr/jeshad-bio-chatbot",
+    tags: ["Python", "Streamlit", "OpenAI", "FAISS", "RAG"],
   },
   {
     name: "Work Schedule Bot",
@@ -182,7 +197,7 @@ export const PROJECTS: Project[] = [
     image: "/images/projects/daves2.png",
     description:
       "Fast food calorie tracker with spice-level selection and cart flows, deployed via Azure App Service.",
-    created: "Jun. 2025",
+    created: "Mar. 2025 - Jun. 2025",
     link: "https://github.com/jeshadr/DavesCalorieCalculator",
     tags: ["ASP.NET", "JavaScript", "Azure", "HTML/CSS"],
   },
