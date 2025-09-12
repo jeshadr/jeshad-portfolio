@@ -22,7 +22,7 @@ export default function ProjectsPage() {
         {
             title: "Experience",
             description: "Roles, skills, and highlights from work.",
-            image: "/images/playlists/experiencelogo.png",
+            image: "/images/playlists/solidExperience.svg",
             href: "/experience",
         },
         {
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
         {
             title: "About Me",
             description: "Quick intro and what I care about.",
-            image: "/images/playlists/aboutmelogo.png",
+            image: "/images/playlists/solidAbout_Me.svg",
             href: "/about",
         },
 
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/playlists/projectslogo.png"
+                                src="/images/playlists/solidMy_Project.svg"
                             />
                         </div>
 

@@ -47,11 +47,11 @@ const experienceItems: SearchItem[] = (EXPERIENCES ?? []).map((e) => ({
 
 // ---- Top-level  ----
 const pageItems: SearchItem[] = [
-  { id: "page-projects",   title: "Projects",          href: "/projects",   section: "Pages", icon: "/images/playlists/projectslogo.png" },
+  { id: "page-projects",   title: "Projects",          href: "/projects",   section: "Pages", icon: "/images/playlists/solidMy_Project.svg" },
   { id: "page-techstack",  title: "Techstack",         href: "/techstack",  section: "Pages", icon: "/images/playlists/techicon.png" },
-  { id: "page-experience", title: "Experience & Skills", href: "/experience", section: "Pages", icon: "/images/playlists/experiencelogo.png" },
+  { id: "page-experience", title: "Experience & Skills", href: "/experience", section: "Pages", icon: "/images/playlists/solidExperience.svg" },
   { id: "page-contact",    title: "Contact",           href: "/contact",    section: "Pages", icon: "/images/playlists/jeshadgpt.png" },
-  { id: "page-about",      title: "About Me",          href: "/about",      section: "Pages", icon: "/images/playlists/aboutmelogo.png" },
+  { id: "page-about",      title: "About Me",          href: "/about",      section: "Pages", icon: "/images/playlists/solidAbout_Me.svg" },
 ];
 
 

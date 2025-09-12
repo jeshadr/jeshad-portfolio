@@ -19,20 +19,20 @@ export default function Experience() {
     const alsoLike: YMALItem[] = [
         {
             title: "Projects",
-            description: "A showcase of apps, models, and builds I’ve worked on.",
-            image: "/images/playlists/projectslogo.png",
+            description: "A showcase of apps, models, and builds I’ve worked on!",
+            image: "/images/playlists/solidMy_Project.svg",
             href: "/projects",
         },
         {
             title: "Contact",
-            description: "Reach out to collaborate or say hi.",
+            description: "Reach out to collaborate or say hi 👋",
             image: "/images/playlists/jeshadgpt.png",
             href: "/contact",
         },
         {
             title: "About Me",
             description: "Quick intro and what I care about.",
-            image: "/images/playlists/aboutmelogo.png",
+            image: "/images/playlists/solidAbout_Me.svg",
             href: "/about",
         },
 
@@ -69,7 +69,7 @@ export default function Experience() {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/playlists/experiencelogo.png" />
+                                src="/images/playlists/solidExperience.svg" />
                         </div>
                         <div className="
                         flex

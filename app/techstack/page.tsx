@@ -18,7 +18,7 @@ export default function Liked() {
             {
                 title: "Experience",
                 description: "Roles, skills, and highlights from work.",
-                image: "/images/playlists/experiencelogo.png",
+                image: "/images/playlists/solidExperience.svg",
                 href: "/experience",
             },
             {
@@ -30,7 +30,7 @@ export default function Liked() {
                 {
             title: "Projects",
             description: "A showcase of apps, models, and builds I’ve worked on.",
-            image: "/images/playlists/projectslogo.png",
+            image: "/images/playlists/solidMy_Project.svg",
             href: "/projects",
         },
     
