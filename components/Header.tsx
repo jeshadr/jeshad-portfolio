@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
 
         {/* Actions on the right */}
         <div className="flex items-center gap-x-3">
-  <a href="/resume.pdf" download="Jeshad_Rahman_Resume.pdf">
+  <a href="/Jeshad_Rahman_Resume.pdf" download="Jeshad_Rahman_Resume.pdf">
     <Button className="bg-white px-6 py-2">Download Resume</Button>
   </a>
 

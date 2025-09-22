@@ -111,7 +111,7 @@ export default function MobileNav({ open, onClose }: Props) {
         {/* Footer */}
         <div className="mt-auto pt-3">
           <a
-            href="/resume.pdf"
+            href="/Jeshad_Rahman_Resume.pdf"
             download="Jeshad_Rahman_Resume.pdf"
             className="block w-full font-semibold text-center bg-white text-black py-2 rounded-full hover:opacity-90 transition"
           >
