@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Game = { title: string; src: string };
 
@@ -36,6 +36,22 @@ const GALLERY_GRID_CLASS = "grid grid-cols-4 gap-3 md:gap-4";
 
 export default function AboutContent() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+
+  // Preload gallery images for faster modal loading
+  useEffect(() => {
+    const preloadImages = () => {
+      GALLERY.forEach((src) => {
+        const img = new window.Image();
+        img.onload = () => {
+          setLoadedImages(prev => new Set(prev).add(src));
+        };
+        img.src = src;
+      });
+    };
+
+    preloadImages();
+  }, []);
 
   const openModal = (imageSrc: string) => {
     setSelectedImage(imageSrc);
@@ -138,6 +154,13 @@ export default function AboutContent() {
                       </div>
                     </div>
                   </div>
+                  
+                  {/* Loading indicator */}
+                  {!loadedImages.has(src) && (
+                    <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1">
+                      <div className="animate-spin rounded-full h-3 w-3 border-b border-white"></div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -162,14 +185,23 @@ export default function AboutContent() {
               </svg>
             </button>
             <div className="relative w-full h-full">
-              <Image
-                src={selectedImage}
-                alt="Gallery image"
-                width={800}
-                height={600}
-                className="object-contain w-full h-full rounded-lg"
-                priority
-              />
+              {loadedImages.has(selectedImage) ? (
+                <Image
+                  src={selectedImage}
+                  alt="Gallery image"
+                  width={800}
+                  height={600}
+                  className="object-contain w-full h-full rounded-lg"
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-neutral-800 rounded-lg">
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+                    <span className="text-white text-sm">Loading image...</span>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
