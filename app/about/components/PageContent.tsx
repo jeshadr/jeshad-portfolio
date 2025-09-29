@@ -37,6 +37,7 @@ const GALLERY_GRID_CLASS = "grid grid-cols-4 gap-3 md:gap-4";
 export default function AboutContent() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [preloadedImages, setPreloadedImages] = useState<Set<string>>(new Set());
 
   // Preload gallery images for faster modal loading
   useEffect(() => {
@@ -45,12 +46,25 @@ export default function AboutContent() {
         const img = new window.Image();
         img.onload = () => {
           setLoadedImages(prev => new Set(prev).add(src));
+          setPreloadedImages(prev => new Set(prev).add(src));
         };
+        img.onerror = () => {
+          // Still mark as "loaded" to avoid infinite loading state
+          setLoadedImages(prev => new Set(prev).add(src));
+        };
+        // Force high priority loading
+        img.loading = 'eager';
         img.src = src;
       });
     };
 
+    // Start preloading immediately
     preloadImages();
+    
+    // Also preload with higher priority after a short delay
+    const timeoutId = setTimeout(preloadImages, 100);
+    
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const openModal = (imageSrc: string) => {
@@ -156,7 +170,7 @@ export default function AboutContent() {
                   </div>
                   
                   {/* Loading indicator */}
-                  {!loadedImages.has(src) && (
+                  {!preloadedImages.has(src) && (
                     <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1">
                       <div className="animate-spin rounded-full h-3 w-3 border-b border-white"></div>
                     </div>
@@ -167,6 +181,21 @@ export default function AboutContent() {
           </section>
         </div>
       </section>
+
+      {/* Hidden preload images for instant modal display */}
+      <div className="hidden">
+        {GALLERY.map((src, index) => (
+          <Image
+            key={`preload-${index}`}
+            src={src}
+            alt=""
+            width={800}
+            height={600}
+            priority={index < 3} // Prioritize first 3 images
+            onLoad={() => setPreloadedImages(prev => new Set(prev).add(src))}
+          />
+        ))}
+      </div>
 
       {/* Modal */}
       {selectedImage && (
@@ -185,7 +214,7 @@ export default function AboutContent() {
               </svg>
             </button>
             <div className="relative w-full h-full">
-              {loadedImages.has(selectedImage) ? (
+              {preloadedImages.has(selectedImage) ? (
                 <Image
                   src={selectedImage}
                   alt="Gallery image"
