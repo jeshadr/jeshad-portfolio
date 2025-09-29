@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import MobilePlayerSheet from "@/components/Mobile/MobilePlayerSheet";
 import MobileNotice from "./components/MobileNotice";
 import PageContent from "./components/PageContent";
 
@@ -17,6 +18,9 @@ export default function Home() {
       <div className="mt-5 mb-7">
         <PageContent />
       </div>
+      
+      {/* Bottom player sheet for mobile */}
+      <MobilePlayerSheet title="My Projects" />
     </div>
   );
 }

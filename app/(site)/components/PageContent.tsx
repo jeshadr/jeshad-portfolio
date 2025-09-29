@@ -1,13 +1,29 @@
 "use client";
 
+import { useMobilePlayer, type MobileTrack } from "@/components/Mobile/MobilePlayerProvider";
 import { PROJECT_CARDS, TECHS } from "@/data/skills";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function PageContent() {
   const router = useRouter();
+  const { openQueue } = useMobilePlayer();
   const goStack = () => router.push("/techstack");
   const goProjects = () => router.push("/projects");
+
+  // Convert PROJECT_CARDS to mobile track format
+  const mobileTracks: MobileTrack[] = PROJECT_CARDS.map((p) => ({
+    id: `home-proj-${p.title}`,
+    title: p.title,
+    subtitle: "Project",
+    description: p.description,
+    image: p.image,
+    href: p.href,
+  }));
+
+  const handleProjectClick = (index: number) => {
+    openQueue(mobileTracks, index);
+  };
 
   return (
     <div className="space-y-8">
@@ -63,12 +79,9 @@ export default function PageContent() {
           {/* Horizontal scroll container */}
           <div className="px-4 sm:px-6 pb-5 overflow-x-auto no-scrollbar">
             <div className="flex flex-nowrap gap-4 sm:gap-6 scale-[0.97]">
-              {PROJECT_CARDS.map((p) => (
-                <a
+              {PROJECT_CARDS.map((p, index) => (
+                <div
                   key={p.title}
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="
                     group relative rounded-xl overflow-hidden bg-neutral-800
                     w-[240px] sm:w-[260px] md:w-[280px]
@@ -78,8 +91,23 @@ export default function PageContent() {
                     shrink-0
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40
                   "
-                  aria-label={p.title}
                 >
+                  {/* Mobile: Click to open player */}
+                  <button
+                    onClick={() => handleProjectClick(index)}
+                    className="md:hidden absolute inset-0 w-full h-full z-10"
+                    aria-label={`Open ${p.title} in mobile player`}
+                  />
+                  
+                  {/* Desktop: Click to open external link */}
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden md:block absolute inset-0 w-full h-full z-10"
+                    aria-label={p.title}
+                  />
+                  
                   <Image
                     src={p.image}
                     alt={p.title}
@@ -100,7 +128,14 @@ export default function PageContent() {
                     <span className="text-white text-sm sm:text-base font-semibold">{p.title}</span>
                     <span className="text-neutral-300 text-xs sm:text-sm mt-1">{p.description}</span>
                   </div>
-                </a>
+                  
+                  {/* Mobile indicator */}
+                  <div className="md:hidden absolute top-2 right-2 bg-white/20 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

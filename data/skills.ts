@@ -107,6 +107,7 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Secure, scalable app development in a healthcare environment with HIPAA compliance.",
     created: "Jul. 2025 - Present",
+    link: "https://www.irenix.org/",
     tags: ["Next.js", "React", "TypeScript", "Tailwind", "Node.js"],
     bullets: [
       "Designed backend services with encrypted storage and audit logging",
