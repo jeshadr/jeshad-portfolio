@@ -14,7 +14,7 @@ const Liked = () => {
         overflow-y-auto"
         >
 
-            <Header>
+            <Header backgroundColor="from-lime-800">
                 <div className="mt-20">
                     <div className="
                     flex

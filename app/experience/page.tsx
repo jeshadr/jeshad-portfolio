@@ -50,7 +50,7 @@ export default function Experience() {
         overflow-hidden
         overflow-y-auto"
         >
-            <Header>
+            <Header backgroundColor="from-orange-800">
                 <div className="mt-20">
                     <div className="
                     flex

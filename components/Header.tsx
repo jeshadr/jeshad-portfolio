@@ -13,15 +13,16 @@ import { useUi } from "./UiProvider";
 interface HeaderProps {
   children: React.ReactNode;
   className?: string;
+  backgroundColor?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ children, className }) => {
+const Header: React.FC<HeaderProps> = ({ children, className, backgroundColor = "from-emerald-800" }) => {
   const router = useRouter();
   const { toggleArtistBar } = useUi();
   const [menuOpen, setMenuOpen] = useState(false); // <-- mobile menu state
 
   return (
-    <div className={twMerge(`h-fit bg-gradient-to-b from-emerald-800 p-6`, className)}>
+    <div className={twMerge(`h-fit bg-gradient-to-b ${backgroundColor} p-6`, className)}>
       {/* Mobile slide-in menu */}
       <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} />
 

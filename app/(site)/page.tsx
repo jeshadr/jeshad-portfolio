@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto no-scrollbar">
       <MobileNotice />
-      <Header>
+      <Header backgroundColor="from-emerald-800">
         <div className="mb-2">
           <h1 className="text-white text-4xl font-semibold">Welcome to Jeshadify!</h1>
           <p className="text-neutral-400 text-sm mt-1">

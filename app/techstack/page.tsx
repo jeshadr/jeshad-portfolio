@@ -45,7 +45,7 @@ export default function Liked() {
         overflow-hidden
         overflow-y-auto"
         >
-            <Header>
+            <Header backgroundColor="from-violet-800">
                 <div className="mt-20">
                     <div className="
                     flex
