@@ -1,7 +1,26 @@
 import Header from "@/components/Header";
 import MobilePlayerSheet from "@/components/Mobile/MobilePlayerSheet";
+import type { Metadata } from "next";
 import MobileNotice from "./components/MobileNotice";
 import PageContent from "./components/PageContent";
+
+export const metadata: Metadata = {
+  title: "Jeshadify - Portfolio",
+  description: "Explore Jeshad Rahman's portfolio featuring React projects, machine learning models, and full-stack applications. A Spotify-themed showcase of software development skills and experience.",
+  keywords: ["Jeshad Rahman", "Full-Stack Developer", "React", "TypeScript", "Python", "Portfolio", "Software Engineer", "Machine Learning"],
+  openGraph: {
+    title: "Jeshad Rahman - Full-Stack Developer",
+    description: "A Spotify-themed portfolio showcasing React projects, ML models, and full-stack applications",
+    images: ["/images/jeshadify.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jeshad Rahman - Full-Stack Developer",
+    description: "A Spotify-themed portfolio showcasing React projects, ML models, and full-stack applications",
+    images: ["/images/jeshadify.png"],
+  },
+};
 
 export default function Home() {
   return (

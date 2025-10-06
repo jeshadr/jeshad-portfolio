@@ -1,8 +1,27 @@
 import Header from "@/components/Header";
 import YouMightAlsoLike, { YMALItem } from "@/components/Mobile/YouMightLike";
 import { PROJECTS } from "@/data/skills";
+import type { Metadata } from "next";
 import Image from "next/image";
 import LikedContent from "./components/likedContent";
+
+export const metadata: Metadata = {
+  title: "Tech Stack",
+  description: "Explore my technical skills and tools including JavaScript, TypeScript, React, Next.js, Python, Node.js, and cloud technologies like AWS and Azure. 5+ years of programming experience.",
+  keywords: ["Tech Stack", "Programming Languages", "JavaScript", "TypeScript", "React", "Next.js", "Python", "Node.js", "AWS", "Azure", "Software Development Tools"],
+  openGraph: {
+    title: "Jeshad Rahman's Tech Stack",
+    description: "Programming languages, frameworks, and tools I use for software development including React, TypeScript, Python, and cloud technologies",
+    images: ["/images/playlists/techicon.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jeshad Rahman's Tech Stack",
+    description: "Programming languages and tools for software development",
+    images: ["/images/playlists/techicon.png"],
+  },
+};
 
 export default function Liked() {
         const mobileTracks = PROJECTS.map((p) => ({

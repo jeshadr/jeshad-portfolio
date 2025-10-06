@@ -1,7 +1,26 @@
 import Header from "@/components/Header";
+import type { Metadata } from "next";
 import Image from "next/image";
 import AboutContent from "./components/PageContent";
 //import ProjectContent from "./components/ProjectContent";
+
+export const metadata: Metadata = {
+  title: "About Me!",
+  description: "Learn about Jeshad Rahman, a passionate full-stack developer with experience in healthcare tech, distributed systems, and AI/ML. Based in Houston, TX. Love for gaming, photography, and building intuitive user experiences.",
+  keywords: ["About Jeshad Rahman", "Full-Stack Developer", "Software Engineer", "Healthcare Tech", "Houston Developer", "React Developer", "TypeScript", "Python", "Machine Learning"],
+  openGraph: {
+    title: "About Jeshad Rahman - Full-Stack Developer",
+    description: "Passionate full-stack developer with experience in healthcare tech, AI/ML, and building intuitive user experiences",
+    images: ["/images/about/jeshadimage.jpg"],
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Jeshad Rahman - Full-Stack Developer",
+    description: "Passionate full-stack developer with experience in healthcare tech and AI/ML",
+    images: ["/images/about/jeshadimage.jpg"],
+  },
+};
 const Liked = () => {
     return (
         <div

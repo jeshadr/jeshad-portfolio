@@ -3,8 +3,27 @@ import MobilePlayerSheet from "@/components/Mobile/MobilePlayerSheet";
 import MobileSongList from "@/components/Mobile/MobileSongList";
 import YouMightAlsoLike, { YMALItem } from "@/components/Mobile/YouMightLike";
 import { EXPERIENCES } from "@/data/skills";
+import type { Metadata } from "next";
 import Image from "next/image";
 import PageContent from "./components/PageContent";
+
+export const metadata: Metadata = {
+  title: "Experience & Skills",
+  description: "Explore my professional experience as a Software Engineering Intern at Irenic Therapeutic Services, Junior Developer at Web Surfing Studios, and Digital Navigator at IDIA. Skills in React, TypeScript, Python, and more.",
+  keywords: ["Software Engineer", "Work Experience", "React Developer", "TypeScript", "Python", "Healthcare Tech", "Full-Stack Development", "Professional Experience"],
+  openGraph: {
+    title: "Jeshad Rahman's Experience & Skills",
+    description: "Professional experience in software engineering, healthcare tech, and digital inclusion with expertise in React, TypeScript, and Python",
+    images: ["/images/playlists/solidExperience.svg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jeshad Rahman's Experience & Skills",
+    description: "Professional experience in software engineering and healthcare tech",
+    images: ["/images/playlists/solidExperience.svg"],
+  },
+};
 
 export default function Experience() {
     const mobileTracks = EXPERIENCES.map((p) => ({

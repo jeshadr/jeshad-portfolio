@@ -1,12 +1,29 @@
-"use client";
-
 import Header from "@/components/Header";
 import MobilePlayerSheet from "@/components/Mobile/MobilePlayerSheet";
 import MobileSongList from "@/components/Mobile/MobileSongList";
 import YouMightAlsoLike, { YMALItem } from "@/components/Mobile/YouMightLike";
 import { PROJECTS } from "@/data/skills";
+import type { Metadata } from "next";
 import Image from "next/image";
 import ProjectContent from "./components/ProjectContent";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Explore my software projects including React applications, machine learning models, full-stack web apps, and games. Built with modern technologies like Next.js, Python, TypeScript, and more.",
+  keywords: ["Software Projects", "React Apps", "Machine Learning", "Full-Stack Development", "Python", "TypeScript", "Next.js", "Portfolio Projects"],
+  openGraph: {
+    title: "Jeshad Rahman's Software Projects",
+    description: "A showcase of React apps, ML models, and full-stack applications built with modern technologies",
+    images: ["/images/playlists/solidMy_Project.svg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jeshad Rahman's Software Projects",
+    description: "A showcase of React apps, ML models, and full-stack applications",
+    images: ["/images/playlists/solidMy_Project.svg"],
+  },
+};
 
 export default function ProjectsPage() {
     const mobileTracks = PROJECTS.map((p) => ({

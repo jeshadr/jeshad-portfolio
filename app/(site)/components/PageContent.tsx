@@ -4,12 +4,21 @@ import { useMobilePlayer, type MobileTrack } from "@/components/Mobile/MobilePla
 import { PROJECT_CARDS, TECHS } from "@/data/skills";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useCallback, useRef, useState } from "react";
 
 export default function PageContent() {
   const router = useRouter();
   const { openQueue } = useMobilePlayer();
   const goStack = () => router.push("/techstack");
   const goProjects = () => router.push("/projects");
+
+  // Drag scroll state
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [hasDragged, setHasDragged] = useState(false);
+  const [dragThreshold] = useState(5); // pixels of movement to consider it a drag
 
   // Convert PROJECT_CARDS to mobile track format
   const mobileTracks: MobileTrack[] = PROJECT_CARDS.map((p) => ({
@@ -24,6 +33,46 @@ export default function PageContent() {
   const handleProjectClick = (index: number) => {
     openQueue(mobileTracks, index);
   };
+
+  // Drag scroll handlers
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    
+    setIsDragging(true);
+    setHasDragged(false);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+    
+    // Prevent text selection during drag
+    e.preventDefault();
+  }, []);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll speed multiplier
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    
+    // Check if we've moved enough to consider it a drag
+    const distance = Math.abs(x - startX);
+    if (distance > dragThreshold) {
+      setHasDragged(true);
+    }
+  }, [isDragging, startX, scrollLeft, dragThreshold]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+    // Reset hasDragged after a short delay to allow click handlers to check it
+    setTimeout(() => setHasDragged(false), 100);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsDragging(false);
+    // Reset hasDragged after a short delay to allow click handlers to check it
+    setTimeout(() => setHasDragged(false), 100);
+  }, []);
 
   return (
     <div className="space-y-8">
@@ -77,7 +126,17 @@ export default function PageContent() {
           </div>
 
           {/* Horizontal scroll container */}
-          <div className="px-4 sm:px-6 pb-5 overflow-x-auto no-scrollbar">
+          <div 
+            ref={scrollContainerRef}
+            className={`px-4 sm:px-6 pb-5 overflow-x-auto no-scrollbar select-none transition-colors ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+          >
             <div className="flex flex-nowrap gap-4 sm:gap-6 scale-[0.97]">
               {PROJECT_CARDS.map((p, index) => (
                 <div
@@ -94,7 +153,11 @@ export default function PageContent() {
                 >
                   {/* Mobile: Click to open player */}
                   <button
-                    onClick={() => handleProjectClick(index)}
+                    onClick={(e) => {
+                      if (!isDragging) {
+                        handleProjectClick(index);
+                      }
+                    }}
                     className="md:hidden absolute inset-0 w-full h-full z-10"
                     aria-label={`Open ${p.title} in mobile player`}
                   />
@@ -104,6 +167,11 @@ export default function PageContent() {
                     href={p.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (isDragging || hasDragged) {
+                        e.preventDefault();
+                      }
+                    }}
                     className="hidden md:block absolute inset-0 w-full h-full z-10"
                     aria-label={p.title}
                   />

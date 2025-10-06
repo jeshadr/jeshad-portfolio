@@ -1,6 +1,25 @@
 import Header from "@/components/Header";
+import type { Metadata } from "next";
 import Image from "next/image";
 import ContactPage from "./components/PageContent";
+
+export const metadata: Metadata = {
+  title: "Contact Me!",
+  description: "Get in touch with Jeshad Rahman for collaboration, job opportunities, or just to say hi! Contact via email, LinkedIn, GitHub, or use the contact form. Based in Houston, TX.",
+  keywords: ["Contact Jeshad Rahman", "Hire Developer", "Software Engineer Contact", "Collaboration", "Job Opportunities", "Houston Developer", "React Developer Contact"],
+  openGraph: {
+    title: "Contact Jeshad Rahman - Software Developer",
+    description: "Get in touch for collaboration, job opportunities, or just to say hi! Available for software development projects.",
+    images: ["/images/playlists/jeshadgpt.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Jeshad Rahman - Software Developer",
+    description: "Get in touch for collaboration and job opportunities",
+    images: ["/images/playlists/jeshadgpt.png"],
+  },
+};
 const Liked = () => {
     return (
         <div
