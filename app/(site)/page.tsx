@@ -5,8 +5,8 @@ import MobileNotice from "./components/MobileNotice";
 import PageContent from "./components/PageContent";
 
 export const metadata: Metadata = {
-  title: "Jeshadify - Portfolio",
-  description: "Explore Jeshad Rahman's portfolio featuring React projects, machine learning models, and full-stack applications. A Spotify-themed showcase of software development skills and experience.",
+  title: "Jeshadify - Portfolio | Jeshad Rahman",
+  description: "Explore my portfolio featuring React projects, machine learning models, and full-stack applications. A Spotify-themed showcase of software development skills and experience.",
   keywords: ["Jeshad Rahman", "Full-Stack Developer", "React", "TypeScript", "Python", "Portfolio", "Software Engineer", "Machine Learning"],
   openGraph: {
     title: "Jeshad Rahman - Full-Stack Developer",
