@@ -3,10 +3,9 @@
 Welcome to **Jeshadify**, my personal developer portfolio inspired by Spotify’s clean and interactive design language.  
 Instead of playlists and albums, Jeshadify organizes my **projects, skills, and experience** into a dynamic, music-like interface.  
 
-## 🔗 Live Demo & Repo
+## 🔗 Live Demo
 
 - **Live Demo:** [Portfolio Link](https://jeshadr.com)
-- **Repository:** [GitHub Link](https://github.com/jeshadr/jeshad-portfolio)
 
 ## 🚀 Features
 
@@ -37,16 +36,22 @@ Instead of playlists and albums, Jeshadify organizes my **projects, skills, and 
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](https://gyazo.com/9ca74544dba971eedb3d39c393da5a2e.png)
-
-### Tech Stack
-![Tech Stack](https://gyazo.com/b2d78d3b7c02d88cdf8067dee1f1d38f.png)
+![Home Page](https://gyazo.com/5e7ea64f7e0592ec5d8ad18e158cfc39.png)
 
 ### Projects
-![Projects](https://gyazo.com/d0e54c1d923dabdf97b66ae3e209b807.png)
+![Projects](https://gyazo.com/70e7d394c58cff3f8ec75d91abb2969a.png)
+
+### Experience
+![Experience](https://gyazo.com/498b80945707ec18a571ca9f31068944.png)
+
+### Tech Stack
+![Tech Stack](https://gyazo.com/29a9904662fc9131848e614fd47d9b9d.png)
 
 ### Contact Me
-![Contact Me](https://gyazo.com/a06d8303ffa18ddcfb4ddb7f0fb7bce5.png)
+![Contact Me](https://gyazo.com/f9ffc27c0eb6091b6f8325f3ee5a9974.png)
+
+### About Me
+![About Me](https://gyazo.com/b0c91a1768404c0a1ea72e2f6452974b.png)
 
 ### 📱 Mobile Views
 <p align="center">
