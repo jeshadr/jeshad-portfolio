@@ -9,6 +9,7 @@ type RowProps = {
   since?: string | number;
   proficiency?: number | string;
   notes?: string;
+  priority?: boolean;
 };
 
 export default function Row({
@@ -19,6 +20,7 @@ export default function Row({
   since,
   proficiency,
   notes,
+  priority = false,
 }: RowProps) {
   return (
     <div
@@ -33,7 +35,7 @@ export default function Row({
       <div className="md:hidden flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
           <span className="relative h-10 w-10 rounded overflow-hidden flex-none">
-            <Image src={icon} alt={name} fill className="object-contain p-1.5" />
+            <Image src={icon} alt={name} fill className="object-contain p-1.5" priority={priority} />
           </span>
           <span className="min-w-0">
             <div className="text-white font-medium truncate">{name}</div>
@@ -55,7 +57,7 @@ export default function Row({
 
       <div className="hidden md:flex items-center gap-3 min-w-0">
         <span className="relative h-10 w-10 rounded overflow-hidden shrink-0">
-          <Image src={icon} alt={name} fill className="object-contain p-1.5" />
+          <Image src={icon} alt={name} fill className="object-contain p-1.5" priority={priority} />
         </span>
         <span className="min-w-0">
           <div className="text-white font-medium truncate">{name}</div>

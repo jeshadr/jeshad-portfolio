@@ -84,7 +84,8 @@ export default function Liked() {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/playlists/techicon.png" />
+                                src="/images/playlists/techicon.png"
+                                priority />
                         </div>
                         <div className="
                         flex

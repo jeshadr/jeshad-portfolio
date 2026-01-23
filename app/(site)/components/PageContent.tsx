@@ -99,7 +99,7 @@ export default function PageContent() {
                   "
                 >
                   <span className="relative h-10 w-10 rounded-lg bg-neutral-800 overflow-hidden">
-                    <Image src={t.icon} alt={t.name} fill className="object-contain p-1.5" sizes="40px" />
+                    <Image src={t.icon} alt={t.name} fill className="object-contain p-1.5" sizes="40px" priority={i < 3} />
                   </span>
                   <span className="min-w-0">
                     <div className="text-white font-medium truncate">{t.name}</div>

@@ -90,6 +90,7 @@ export default function TechstackPageContent() {
             since={s.since}
             proficiency={s.proficiency}
             notes={s.notes}
+            priority={i < 6}
           />
         ))}
       </div>

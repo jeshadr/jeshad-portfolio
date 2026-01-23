@@ -75,6 +75,7 @@ export default function MobileNav({ open, onClose }: Props) {
                 alt="Logo"
                 fill
                 className="object-cover"
+                priority
               />
             </div>
             <span className="text-white font-bold text-2xl tracking-tight">Jeshadify</span>

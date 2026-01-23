@@ -89,7 +89,8 @@ export default function Experience() {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/playlists/solidExperience.svg" />
+                                src="/images/playlists/solidExperience.svg"
+                                priority />
                         </div>
                         <div className="
                         flex

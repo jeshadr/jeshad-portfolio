@@ -79,6 +79,7 @@ export default function ProjectsPage() {
                                 alt="Playlist"
                                 className="object-cover"
                                 src="/images/playlists/solidMy_Project.svg"
+                                priority
                             />
                         </div>
 

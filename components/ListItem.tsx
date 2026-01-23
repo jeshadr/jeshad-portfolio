@@ -8,6 +8,7 @@ interface ListItemProps {
   name: string;
   href?: string;
   variant?: "row" | "tile";
+  priority?: boolean;
 }
 
 const ListItem: React.FC<ListItemProps> = ({
@@ -15,6 +16,7 @@ const ListItem: React.FC<ListItemProps> = ({
   name,
   href,
   variant = "row",
+  priority = false,
 }) => {
   const router = useRouter();
 const onClick = () => {
@@ -41,6 +43,7 @@ const onClick = () => {
             fill
             className="object-contain p-6 bg-neutral-800"
             sizes="200px"
+            priority={priority}
           />
         </div>
         <div className="text-center">
@@ -63,7 +66,7 @@ const onClick = () => {
       "
     >
       <div className="relative min-h-[64px] min-w-[64px]">
-        <Image className="object-cover" fill src={image} alt={name} />
+        <Image className="object-cover" fill src={image} alt={name} priority={priority} />
       </div>
       <p className="font-medium truncate py-5">{name}</p>
       

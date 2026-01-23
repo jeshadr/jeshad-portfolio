@@ -53,7 +53,8 @@ const Liked = () => {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/playlists/jeshadgpt.png" />
+                                src="/images/playlists/jeshadgpt.png"
+                                priority />
                         </div>
                         <div className="
                         flex

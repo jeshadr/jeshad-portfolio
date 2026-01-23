@@ -42,7 +42,8 @@ const Liked = () => {
                                 fill
                                 alt="Playlist"
                                 className="object-cover"
-                                src="/images/playlists/solidAbout_Me.svg" />
+                                src="/images/playlists/solidAbout_Me.svg"
+                                priority />
                         </div>
                         <div className="
                         flex
