@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ children, className, backgroundColor = 
   const [menuOpen, setMenuOpen] = useState(false); // <-- mobile menu state
 
   return (
-    <div className={twMerge(`h-fit bg-gradient-to-b ${backgroundColor} p-6`, className)}>
+    <div className={twMerge(`h-fit bg-gradient-to-b ${backgroundColor} p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] md:pt-6`, className)}>
       {/* Mobile slide-in menu */}
       <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} />
 

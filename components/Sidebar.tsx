@@ -27,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   );
 
   return (
-    <div className="flex h-dvh min-h-0 overflow-hidden">
+    <div className="flex h-dvh min-h-0 overflow-hidden pb-[env(safe-area-inset-bottom)]">
       {/* Left column */}
       <div className="hidden md:flex flex-col gap-y-2 bg-black w-[300px] p-2 h-full min-h-0 overflow-hidden">
         <Box>

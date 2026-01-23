@@ -101,9 +101,24 @@ export type Experience = {
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Irenic Therapeutic Services",
+    company: "Bideshi",
+    role: "Lead Software Engineer",
+    image: "/images/experience/Bideshi_Logo.png",
+    description:
+      "Immersive storytelling and e-commerce development celebrating South Asian heritage.",
+    created: "Sept. 2025 - Present",
+    link: "https://bideshi.co/",
+    tags: ["Liquid", "JavaScript", "Shopify", "HTML", "UX Design"],
+    bullets: [
+      "Led a cross-functional team rebuilding a Shopify storefront centered on South Asian culture and heritage",
+      "Implemented reusable Liquid templates and interactive article sections to support dynamic storytelling",
+      "Improved navigation flow and visual hierarchy, increasing user retention by 20% and sales conversions by 15%",
+    ],
+  },
+  {
+    company: "Irenix Empowerment Foundation",
     role: "Software Engineering Intern",
-    image: "/images/experience/ireniclogo.png",
+    image: "/images/experience/IrenixLogo.png",
     description:
       "Secure, scalable app development in a healthcare environment with HIPAA compliance.",
     created: "Jul. 2025 - Present",
@@ -121,7 +136,7 @@ export const EXPERIENCES: Experience[] = [
     image: "/images/experience/websurfing.png",
     description:
       "Collaborative full-stack development with emphasis on code reviews and Git workflows.",
-    created: "Jul. 2025 - Present",
+    created: "Jul. 2025 - Nov. 2025",
     link: "https://www.websurfingstudios.com/",
     tags: ["JavaScript", "HTML", "CSS"],
     bullets: [

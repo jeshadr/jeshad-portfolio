@@ -58,7 +58,7 @@ export default function Liked() {
         <div
             className="
         bg-neutral-900
-        rounded-lg
+        md:rounded-lg
         h-full
         w-full
         overflow-hidden

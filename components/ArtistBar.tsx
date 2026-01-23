@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Box from "./Box";
 
 export default function ArtistBar() {
@@ -54,9 +54,7 @@ export default function ArtistBar() {
               <a href="https://www.instagram.com/jeshadr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90 transition">
                 <FaInstagram size={20} className="text-white" />
               </a>
-              <a href="https://www.jeshadr.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-green-600 hover:bg-green-500 transition">
-                <FaGlobe size={20} className="text-white" />
-              </a>
+
             </div>
           </div>
         </Box>
@@ -66,7 +64,8 @@ export default function ArtistBar() {
           <div className="p-4">
             <h3 className="text-white font-semibold">Highlights</h3>
             <ul className="mt-3 space-y-2 text-sm text-neutral-300">
-              <li>Software Engineering Intern @ Irenic Therapeutic Services</li>
+              <li>Lead Software Engineer @ Bideshi</li>
+              <li>Software Engineering Intern @ Irenix Empowerment Foundation</li>
               <li>Junior Software Engineer @ Web Surfing Studios</li>
               <li>Digital Navigator @ IDIA</li>
             </ul>
@@ -79,8 +78,8 @@ export default function ArtistBar() {
             <h3 className="text-white font-semibold">Fun Facts</h3>
             <div className="mt-3 text-sm text-neutral-300">
               • Love going on hikes<br />
-              • Big fan of movies & shows <br />
-              • Love to eat out<br />
+              • Big fan of movies & shows<br />
+              • Love to go on runs<br />
               • Big fan of hot chicken... <br />
               • Coffee enthusiast <br />
               • Love cats<br />

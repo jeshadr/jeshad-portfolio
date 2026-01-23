@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto no-scrollbar">
+    <div className="bg-neutral-900 md:rounded-lg h-full w-full overflow-hidden overflow-y-auto no-scrollbar">
       <MobileNotice />
       <Header backgroundColor="from-emerald-800">
         <div className="mb-2">

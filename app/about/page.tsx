@@ -27,7 +27,7 @@ const Liked = () => {
             className="
             no-scrollbar
         bg-neutral-900
-        rounded-lg
+        md:rounded-lg
         h-full
         w-full
         overflow-hidden

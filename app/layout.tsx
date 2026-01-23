@@ -2,7 +2,7 @@ import Sidebar from "@/components/Sidebar";
 
 import { MobilePlayerProvider } from "@/components/Mobile/MobilePlayerProvider";
 import { UiProvider } from "@/components/UiProvider";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 
@@ -10,6 +10,10 @@ const font = Figtree({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  viewportFit: "cover",
+  themeColor: "#171717",
+};
 
 export const metadata: Metadata = {
   title: "Jeshadify - Portfolio",

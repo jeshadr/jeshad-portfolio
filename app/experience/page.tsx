@@ -9,7 +9,7 @@ import PageContent from "./components/PageContent";
 
 export const metadata: Metadata = {
   title: "Experience & Skills",
-  description: "Explore my professional experience as a Software Engineering Intern at Irenic Therapeutic Services, Junior Developer at Web Surfing Studios, and Digital Navigator at IDIA. Skills in React, TypeScript, Python, and more.",
+  description: "Explore my professional experience as a Software Engineering Intern at Irenix Empowerment Foundation, Junior Developer at Web Surfing Studios, and Digital Navigator at IDIA. Skills in React, TypeScript, Python, and more.",
   keywords: ["Software Engineer", "Work Experience", "React Developer", "TypeScript", "Python", "Healthcare Tech", "Full-Stack Development", "Professional Experience"],
   openGraph: {
     title: "Jeshad Rahman's Experience & Skills",
@@ -63,7 +63,7 @@ export default function Experience() {
             className="
             no-scrollbar
         bg-neutral-900
-        rounded-lg
+        md:rounded-lg
         h-full
         w-full
         overflow-hidden

@@ -106,3 +106,12 @@ body,
 .scrolling:hover::-webkit-scrollbar-thumb {
   background-color: #52525b;
 }
+
+/* iOS Safari safe area support - mobile only */
+@media (max-width: 767px) {
+  html,
+  body,
+  :root {
+    background-color: #171717; /* neutral-900 to match content */
+  }
+}
