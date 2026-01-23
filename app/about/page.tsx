@@ -28,10 +28,11 @@ const Liked = () => {
             no-scrollbar
         bg-neutral-900
         md:rounded-lg
-        h-full
+        min-h-full
+        md:h-full
         w-full
-        overflow-hidden
-        overflow-y-auto"
+        md:overflow-hidden
+        md:overflow-y-auto"
         >
             <Header backgroundColor="from-green-800">
                 <div className="mt-20">

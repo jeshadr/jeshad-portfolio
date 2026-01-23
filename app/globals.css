@@ -83,6 +83,20 @@ body,
   color-scheme: dark;
 }
 
+/* iOS Safari - enable document scrolling on mobile for proper URL bar behavior */
+@media (max-width: 767px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    /* Allow natural document scrolling */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 0px;
   background: transparent;

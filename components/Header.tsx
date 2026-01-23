@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ children, className, backgroundColor = 
       {/* Mobile slide-in menu */}
       <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} />
 
-      <div className="w-full mb-4 flex items-center justify-between">
+      <div className="w-full mb-4 flex items-center justify-between gap-2">
         {/* Back/forward (desktop) */}
         <div className="hidden md:flex gap-x-2 items-center">
           <button
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ children, className, backgroundColor = 
         </div>
 
         {/* Mobile: Hamburger opens menu */}
-        <div className="flex md:hidden gap-x-2 items-center">
+        <div className="flex md:hidden gap-x-2 items-center shrink-0">
           <button
             onClick={() => setMenuOpen(true)}
             className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition"
@@ -62,21 +62,21 @@ const Header: React.FC<HeaderProps> = ({ children, className, backgroundColor = 
         </div>
 
         {/* Actions on the right */}
-        <div className="flex items-center gap-x-3">
-  <a href="/resume.pdf" download="Jeshad_Rahman_Resume.pdf">
-    <Button className="bg-white px-6 py-2">Download Resume</Button>
-  </a>
+        <div className="flex items-center gap-x-3 shrink-0">
+          <a href="/resume.pdf" download="Jeshad_Rahman_Resume.pdf">
+            <Button className="bg-white w-auto px-3 py-2 text-sm md:px-6 md:text-base whitespace-nowrap">Download Resume</Button>
+          </a>
 
-  {/* ArtistBar toggle – desktop only */}
-  <button
-    onClick={toggleArtistBar}
-    className="hidden md:inline-flex rounded-full bg-white p-3 hover:opacity-80 transition"
-    aria-label="Toggle artist bar"
-    title="Toggle artist bar"
-  >
-    <FaUserAlt className="text-black" size={16} />
-  </button>
-</div>
+          {/* ArtistBar toggle – desktop only */}
+          <button
+            onClick={toggleArtistBar}
+            className="hidden md:inline-flex rounded-full bg-white p-3 hover:opacity-80 transition"
+            aria-label="Toggle artist bar"
+            title="Toggle artist bar"
+          >
+            <FaUserAlt className="text-black" size={16} />
+          </button>
+        </div>
       </div>
 
       {children}

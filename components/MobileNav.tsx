@@ -57,7 +57,7 @@ export default function MobileNav({ open, onClose }: Props) {
         className={`
           absolute left-0 top-0 h-full w-[82%] max-w-[360px]
           bg-neutral-950 border-r border-white/10
-          p-4 flex flex-col gap-2
+          p-4 pt-[calc(1rem+env(safe-area-inset-top))] pb-[calc(1rem+env(safe-area-inset-bottom))] flex flex-col gap-2
           ${isClosing ? "animate-slideOut" : "animate-slideIn"}
         `}
         onClick={(e) => e.stopPropagation()}

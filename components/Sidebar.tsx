@@ -27,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   );
 
   return (
-    <div className="flex h-dvh min-h-0 overflow-hidden pb-[env(safe-area-inset-bottom)]">
+    <div className="flex w-full max-w-full overflow-x-hidden min-h-dvh md:h-dvh md:min-h-0 md:overflow-hidden pb-[env(safe-area-inset-bottom)]">
       {/* Left column */}
       <div className="hidden md:flex flex-col gap-y-2 bg-black w-[300px] p-2 h-full min-h-0 overflow-hidden">
         <Box>
@@ -43,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
       </div>
 
       {/* Main */}
-      <main className="h-full flex-1 overflow-y-auto min-h-0 custom-scrollbar py-0 md:py-2">
+      <main className="flex-1 w-full min-w-0 md:w-auto md:h-full md:overflow-y-auto md:min-h-0 custom-scrollbar py-0 md:py-2">
         {children}
       </main>
 
