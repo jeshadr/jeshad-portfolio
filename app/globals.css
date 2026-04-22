@@ -100,6 +100,7 @@ body,
 /* Overlay scrollbar — thumb only, no track */
 .hover-scrollbar {
   overflow-y: auto;
+  overscroll-behavior: none;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
   transition: scrollbar-color 400ms ease;

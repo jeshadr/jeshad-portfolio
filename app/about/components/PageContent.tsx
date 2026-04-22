@@ -78,7 +78,7 @@ export default function AboutContent() {
   };
 
   return (
-    <div className="pb-24 px-6 max-w-7xl mt-4">
+    <div className="pb-6 px-6 max-w-7xl mt-4">
       {/* Hero */}
       <section className="relative w-full rounded-2xl overflow-hidden">
         <div className={`relative w-full aspect-[4/3] lg:aspect-[2/1] ${showArtistBar ? "xl:aspect-[4/3]" : ""}`}>
