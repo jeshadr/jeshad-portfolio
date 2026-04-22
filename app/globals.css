@@ -97,28 +97,34 @@ body,
   }
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 0px;
+/* Overlay scrollbar — thumb only, no track */
+.hover-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 400ms ease;
+}
+
+.hover-scrollbar.show-scrollbar {
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+.hover-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hover-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.custom-scrollbar {
-  scrollbar-width: none;
-}
-
-.scrolling::-webkit-scrollbar {
-  width: 8px;
-}
-
-.scrolling::-webkit-scrollbar-thumb {
-  background-color: #3f3f46;
+.hover-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
   border-radius: 9999px;
-  border: 2px solid transparent;
-  background-clip: content-box;
+  transition: background-color 400ms ease;
 }
 
-.scrolling:hover::-webkit-scrollbar-thumb {
-  background-color: #52525b;
+.hover-scrollbar.show-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 /* iOS Safari safe area support - mobile only */

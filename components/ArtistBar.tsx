@@ -1,10 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { useRef, useState } from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Box from "./Box";
 
 export default function ArtistBar() {
+  const [hovered, setHovered] = useState(false);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   return (
     <div
       className="
@@ -18,7 +22,16 @@ export default function ArtistBar() {
       "
     >
       {/* Single scroll region that holds ALL cards */}
-      <div className="flex-1 overflow-y-auto flex flex-col gap-y-2 no-scrollbar">
+      <div
+        className={`flex-1 flex flex-col gap-y-2 hover-scrollbar${hovered ? " show-scrollbar" : ""}`}
+        onMouseEnter={() => {
+          if (leaveTimer.current) clearTimeout(leaveTimer.current);
+          setHovered(true);
+        }}
+        onMouseLeave={() => {
+          leaveTimer.current = setTimeout(() => setHovered(false), 600);
+        }}
+      >
         {/* About card */}
         <Box className="h-full">
           <div className="p-4">

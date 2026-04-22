@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useUi } from "@/components/UiProvider";
 
 type Game = { title: string; src: string };
 
@@ -35,6 +36,7 @@ const IMAGE_SIZES =
 const GALLERY_GRID_CLASS = "grid grid-cols-4 gap-3 md:gap-4";
 
 export default function AboutContent() {
+  const { showArtistBar } = useUi();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   const [preloadedImages, setPreloadedImages] = useState<Set<string>>(new Set());
@@ -76,109 +78,98 @@ export default function AboutContent() {
   };
 
   return (
-    <div className="pb-24">
-      <section
-        className="
-          max-w-7xl px-6 mt-4
-          grid grid-cols-1
-          lg:[grid-template-columns:clamp(280px,32vw,420px)_1fr]
-          gap-6 items-start
-        "
-      >
-        {/* LEFT */}
-        <div className="w-full">
-          <div className="relative aspect-square rounded-xl overflow-hidden">
-            <Image
-              src="/images/about/jeshadimage.jpg"
-              alt="Jeshad Rahman"
-              fill
-              className="object-cover"
-              priority
-              sizes="(min-width:1024px) 32vw, 90vw"
-            />
-          </div>
-          <div className="rounded-b-xl rounded-t-none -mt-px p-4 md:p-5">
-            <h2 className="text-white text-center text-xl md:text-2xl font-bold">
-              Jeshad Rahman
-            </h2>
-            <p className="mt-2 md:mt-3 text-neutral-300 leading-relaxed text-sm md:text-base">
-              Full-stack developer passionate about building secure, scalable apps with a love for
-              intuitive UI. Experienced in healthcare tech, distributed systems, and AI/ML. I&apos;m
-              always learning and creating. I thrive on taking projects from idea to launch,
-              iterating with real users along the way.
-            </p>
-          </div>
+    <div className="pb-24 px-6 max-w-7xl mt-4">
+      {/* Hero */}
+      <section className="relative w-full rounded-2xl overflow-hidden">
+        <div className={`relative w-full aspect-[4/3] lg:aspect-[2/1] ${showArtistBar ? "xl:aspect-[4/3]" : ""}`}>
+          <Image
+              src="/images/about/jeshad_landscape.JPG"
+            alt="Jeshad Rahman"
+            fill
+            className="object-cover object-[center_70%]"
+            priority
+            sizes="(min-width:1280px) calc(100vw - 340px), 100vw"
+          />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 via-[25%] to-transparent" />
+        <div className="absolute bottom-0 left-0 p-6 md:p-8">
+          <h2 className="text-white text-2xl md:text-3xl font-bold">
+            Jeshad Rahman
+          </h2>
+          <p className="mt-2 text-neutral-300 leading-relaxed text-sm md:text-base max-w-xl">
+            Full-stack developer passionate about building secure, scalable apps with a love for
+            intuitive UI. Experienced in healthcare tech, distributed systems, and AI/ML. I&apos;m
+            always learning and creating. I thrive on taking projects from idea to launch,
+            iterating with real users along the way.
+          </p>
+        </div>
+      </section>
 
-        {/* RIGHT */}
-        <div className="space-y-8 md:space-y-10 md:pl-10">
-          {/* Games */}
-          <section>
-            <h3 className="text-white text-xl md:text-2xl font-semibold mb-3 md:mb-4">
-              Games I Like 🎮
-            </h3>
-            <div className={GAMES_GRID_CLASS}>
-              {GAMES.map((g) => (
-                <div
-                  key={g.title}
-                  className="relative aspect-square rounded-xl overflow-hidden bg-neutral-800 group"
-                >
-                  <Image
-                    src={g.src}
-                    alt={g.title}
-                    fill
-                    className="object-cover"
-                    sizes={IMAGE_SIZES}
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span className="text-white font-semibold text-sm text-center px-1">
-                      {g.title}
-                    </span>
+      {/* Games */}
+      <section className="mt-8 md:mt-10">
+        <h3 className="text-white text-xl md:text-2xl font-semibold mb-3 md:mb-4">
+          Games I Like 🎮
+        </h3>
+        <div className={GAMES_GRID_CLASS}>
+          {GAMES.map((g) => (
+            <div
+              key={g.title}
+              className="relative aspect-square rounded-xl overflow-hidden bg-neutral-800 group"
+            >
+              <Image
+                src={g.src}
+                alt={g.title}
+                fill
+                className="object-cover"
+                sizes={IMAGE_SIZES}
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                <span className="text-white font-semibold text-sm text-center px-1">
+                  {g.title}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="mt-8 md:mt-10">
+        <h3 className="text-white text-xl md:text-2xl font-semibold mb-3 md:mb-4">
+          My Gallery 🎥
+        </h3>
+        <div className={GALLERY_GRID_CLASS}>
+          {GALLERY.map((src, i) => (
+            <div
+              key={i}
+              className="relative aspect-square rounded-xl overflow-hidden bg-neutral-800 cursor-pointer group"
+              onClick={() => openModal(src)}
+            >
+              <Image
+                src={src}
+                alt={`Gallery ${i + 1}`}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-200"
+                sizes="(min-width:1280px) 25vw, (min-width:1024px) 25vw, (min-width:640px) 25vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
                   </div>
                 </div>
-              ))}
-            </div>
-          </section>
+              </div>
 
-          {/* Gallery */}
-          <section>
-            <h3 className="text-white text-xl md:text-2xl font-semibold mb-3 md:mb-4">
-              My Gallery 🎥
-            </h3>
-            <div className={GALLERY_GRID_CLASS}>
-              {GALLERY.map((src, i) => (
-                <div
-                  key={i}
-                  className="relative aspect-square rounded-xl overflow-hidden bg-neutral-800 cursor-pointer group"
-                  onClick={() => openModal(src)}
-                >
-                  <Image
-                    src={src}
-                    alt={`Gallery ${i + 1}`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-200"
-                    sizes="(min-width:1280px) 25vw, (min-width:1024px) 25vw, (min-width:640px) 25vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Loading indicator */}
-                  {!preloadedImages.has(src) && (
-                    <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1">
-                      <div className="animate-spin rounded-full h-3 w-3 border-b border-white"></div>
-                    </div>
-                  )}
+              {/* Loading indicator */}
+              {!preloadedImages.has(src) && (
+                <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1">
+                  <div className="animate-spin rounded-full h-3 w-3 border-b border-white"></div>
                 </div>
-              ))}
+              )}
             </div>
-          </section>
+          ))}
         </div>
       </section>
 
