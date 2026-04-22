@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
 import ArtistBar from "./ArtistBar";
@@ -14,9 +14,19 @@ interface SidebarProps {
   children: React.ReactNode;
 }
 
+const MIN_ARTIST_WIDTH = 240;
+const MAX_ARTIST_WIDTH = 600;
+const DEFAULT_ARTIST_WIDTH = 400;
+
 const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const pathname = usePathname();
   const { showArtistBar } = useUi();
+
+  const [artistBarWidth, setArtistBarWidth] = useState(DEFAULT_ARTIST_WIDTH);
+  const [dragging, setDragging] = useState(false);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const startWidth = useRef(0);
 
   const routes = useMemo(
     () => [
@@ -25,6 +35,44 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     ],
     [pathname]
   );
+
+  const handleDividerMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    isDragging.current = true;
+    setDragging(true);
+    startX.current = e.clientX;
+    startWidth.current = artistBarWidth;
+    document.body.style.cursor = "grabbing";
+    document.body.style.userSelect = "none";
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging.current) return;
+      const delta = startX.current - e.clientX;
+      const newWidth = Math.min(
+        MAX_ARTIST_WIDTH,
+        Math.max(MIN_ARTIST_WIDTH, startWidth.current + delta)
+      );
+      setArtistBarWidth(newWidth);
+    };
+
+    const handleMouseUp = () => {
+      if (!isDragging.current) return;
+      isDragging.current = false;
+      setDragging(false);
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, []);
 
   return (
     <div className="flex w-full max-w-full overflow-x-hidden min-h-dvh md:h-dvh md:min-h-0 md:overflow-hidden pb-[env(safe-area-inset-bottom)]">
@@ -47,11 +95,25 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         {children}
       </main>
 
-      {/* Right Artist bar (toggled) */}
+      {/* Resize divider + Artist bar */}
       {showArtistBar && (
-        <div className="hidden xl:block no-scrollbar">
-          <ArtistBar />
-        </div>
+        <>
+          {/* Drag handle */}
+          <div
+            className={`hidden xl:flex items-center justify-center w-2 -mx-1 flex-shrink-0 group relative z-10 py-4 ${dragging ? "cursor-grabbing" : "cursor-grab"}`}
+            onMouseDown={handleDividerMouseDown}
+          >
+            <div className={`w-px h-full rounded-full transition-all duration-300 ease-in-out translate-x-1 ${dragging ? "opacity-100 bg-white scale-x-[1.5]" : "opacity-0 group-hover:opacity-100 bg-white/50 scale-x-50"}`} />
+          </div>
+
+          {/* Artist bar */}
+          <div
+            className="hidden xl:block flex-shrink-0"
+            style={{ width: artistBarWidth }}
+          >
+            <ArtistBar />
+          </div>
+        </>
       )}
     </div>
   );

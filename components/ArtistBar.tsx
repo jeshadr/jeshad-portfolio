@@ -12,10 +12,10 @@ export default function ArtistBar() {
   return (
     <div
       className="
-        hidden xl:flex
+        flex
         flex-col
         bg-black
-        w-[400px]
+        w-full
         p-2
         h-full
         overflow-hidden
