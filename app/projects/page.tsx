@@ -60,7 +60,7 @@ export default function ProjectsPage() {
     return (
         <div
             className="
-        no-scrollbar
+        hover-scrollbar
         bg-neutral-900
         md:rounded-lg
         min-h-full

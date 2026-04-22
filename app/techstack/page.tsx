@@ -57,6 +57,7 @@ export default function Liked() {
     return (
         <div
             className="
+        hover-scrollbar
         bg-neutral-900
         md:rounded-lg
         min-h-full

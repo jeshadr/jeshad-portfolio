@@ -105,7 +105,8 @@ body,
   transition: scrollbar-color 400ms ease;
 }
 
-.hover-scrollbar.show-scrollbar {
+.hover-scrollbar.show-scrollbar,
+.hover-scrollbar:hover {
   scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
@@ -123,7 +124,8 @@ body,
   transition: background-color 400ms ease;
 }
 
-.hover-scrollbar.show-scrollbar::-webkit-scrollbar-thumb {
+.hover-scrollbar.show-scrollbar::-webkit-scrollbar-thumb,
+.hover-scrollbar:hover::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
