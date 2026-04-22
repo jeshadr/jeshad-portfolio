@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useMemo, useRef, useState } from "react";
+import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
 import ArtistBar from "./ArtistBar";
@@ -17,8 +17,6 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const pathname = usePathname();
   const { showArtistBar } = useUi();
-  const [mainHovered, setMainHovered] = useState(false);
-  const mainLeaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const routes = useMemo(
     () => [
@@ -45,16 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
       </div>
 
       {/* Main */}
-      <main
-        className={`flex-1 w-full min-w-0 md:w-auto md:h-full md:overflow-y-auto md:min-h-0 hover-scrollbar py-0 md:py-2${mainHovered ? " show-scrollbar" : ""}`}
-        onMouseEnter={() => {
-          if (mainLeaveTimer.current) clearTimeout(mainLeaveTimer.current);
-          setMainHovered(true);
-        }}
-        onMouseLeave={() => {
-          mainLeaveTimer.current = setTimeout(() => setMainHovered(false), 600);
-        }}
-      >
+      <main className="flex-1 w-full min-w-0 md:w-auto md:h-full md:overflow-y-auto md:min-h-0 custom-scrollbar py-0 md:py-2">
         {children}
       </main>
 
